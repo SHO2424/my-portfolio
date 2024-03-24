@@ -10,13 +10,14 @@ import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Register from './register';
 
 const Login = () => {
     const router = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: '/dashboard',
+        redirectIfAuthenticated: '/home',
     })
 
     const [email, setEmail] = useState('')
@@ -47,12 +48,7 @@ const Login = () => {
 
     return (
         <GuestLayout>
-            <AuthCard
-                logo={
-                    <Link href="/">
-                        <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                    </Link>
-                }>
+            <AuthCard>
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
@@ -95,7 +91,7 @@ const Login = () => {
                     </div>
 
                     {/* Remember Me */}
-                    <div className="block mt-4">
+                    <div className="block mt-4 flex items-center justify-between">
                         <label
                             htmlFor="remember_me"
                             className="inline-flex items-center">
@@ -113,15 +109,21 @@ const Login = () => {
                                 Remember me
                             </span>
                         </label>
-                    </div>
-
-                    <div className="flex items-center justify-end mt-4">
                         <Link
                             href="/forgot-password"
                             className="underline text-sm text-gray-600 hover:text-gray-900">
                             Forgot your password?
                         </Link>
+                    </div>
 
+                    <div className="flex items-center justify-end mt-4">
+                        <Link
+                            href="/register"
+                            className="underline text-sm text-gray-600 hover:text-gray-900">
+                            Not registered yet?
+                        </Link>
+
+                     
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>

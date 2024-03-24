@@ -9,7 +9,7 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-
+import styles from "./Navbar.module.css";
 const Navigation = ({ user }) => {
     const router = useRouter()
 
@@ -22,21 +22,35 @@ const Navigation = ({ user }) => {
             {/* Primary Navigation Menu */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
-                    <div className="flex">
+                    <div className="flex items-center">
                         {/* Logo */}
-                        <div className="flex-shrink-0 flex items-center">
-                            <Link href="/dashboard">
+                        {/* <div className="flex-shrink-0 flex items-center">
+                            {/* <Link href="/home">
                                 <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" />
-                            </Link>
-                        </div>
+                            </Link> */}
+                        {/* </div>  */}
 
                         {/* Navigation Links */}
-                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white-100">
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-7 sm:flex text-white-100">
                             <NavLink
                                 href="/home"
                                 active={router.pathname === '/home'}>
                                 Home
                             </NavLink>
+                            {/* <nav className="inline-flex items-center  border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out ">
+                            <div className={styles.menuItem}>
+                                league
+                                <div className={styles.subMenu}>
+                                <NavLink href="detail/England/39">Premier</NavLink>
+                                <NavLink href="detail/Spain/140">Laliga</NavLink>
+                                <NavLink href="detail/Italy/135">SerieA</NavLink>
+                                <NavLink href="detail/France/61">Ligue1</NavLink>
+                                <NavLink href="detail/Germany/78">Bundesliga</NavLink>
+                                </div>
+                            </div>
+                
+                        </nav> */}
+                         
                         </div>
                     </div>
 

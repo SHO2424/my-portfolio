@@ -1,0 +1,22 @@
+.navbar {
+    /* ナビゲーションバーのスタイル */
+   
+  }
+ 
+  .menuItem {
+    /* メニューアイテムのスタイル */
+    position: relative;
+    display: block;
+    color:white;
+  }
+  
+  .subMenu {
+    display: none;
+    position: absolute;
+    /* サブメニューのスタイリング */
+  }
+  
+  .menuItem:hover .subMenu {
+    display: block; /* ホバー時にサブメニューを表示 */
+  }
+  
