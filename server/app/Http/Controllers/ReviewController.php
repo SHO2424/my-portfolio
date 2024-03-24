@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -12,7 +13,8 @@ class ReviewController extends Controller
      */
     public function index($player_id)
     {
-        $reviews = Review::where('team_id',$player_id)->get();
+        $reviews = Review::with("user")
+        ->where('team_id',$player_id)->get();
 
         return response()->json($reviews);
     }
@@ -31,25 +33,20 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            "content"=>"required|string",
             "rating" => "required",
             "team_id" => "required",
         ]);
     
         // レビューを作成
         $review = Review::create([
+            "user_id"=>Auth::id(),
+            "content"=>$validatedData["content"],
             "rating" => $validatedData["rating"],
             "team_id" => $validatedData["team_id"]
         ]);
-    
-        // 同じplayer_idを持つすべてのレビューを取得
-        // $reviews = Review::where("team_id", $validatedData["team_id"])->get();
-        // $reviews = Review::all();
-    
-        // レスポンスとして作成したレビューと取得したレビューを返す
-        // return response()->json([
-        //     'createdReview' => $review,
-        //     'allReviewsForPlayer' => $reviews
-        // ]);
+        $review->load("user");
+
         return response()->json($review);
     }
     
@@ -59,7 +56,8 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        // $review->load('user');
+        // return response()->json($review);
     }
 
     /**
@@ -75,7 +73,15 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $validatedData=$request->validate([
+            "content"=>"required|string",
+            "rating"=>"required|integer",
+        ]);
+        $review->update([
+            "content"=>$validatedData["content"],
+            "rating"=>$validatedData["rating"],
+        ]);
+        return response()->json($review);
     }
 
     /**
@@ -83,6 +89,7 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return response()->json(["message"=>"正常にレビューを削除しました。"]);
     }
 }
