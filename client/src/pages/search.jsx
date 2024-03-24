@@ -2,24 +2,18 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout'
-import Head from 'next/head'
-import SideBar from "../components/SideBar"
 import Link from 'next/link';
 import SearchBar from "../components/SearchBar"
 import {useRouter} from "next/router"
-// import Layout from '@/components/Layouts/Layout';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import {Card,CardActionArea,CardMedia,CardContent,Grid ,Typography,Box } from '@mui/material'
 
 const search = () => {
-    // const [category,setCategory]=useState("all");
-    // console.log(category);
     const [results,setResults]=useState([]);
     const[loading,setLoading]=useState(true) 
-console.log(results);
+    console.log(results);
     const router=useRouter();
-    const {query:searchQuery }=router.query;   
-    // const[loading,setLoading]=useState(true) 
+    const {query:searchQuery }=router.query;     
     console.log(searchQuery);
     useEffect(()=>{
         if(!searchQuery){return}
@@ -35,7 +29,7 @@ console.log(results);
                       'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
                     }
                   });
-                  const fetchData=response.data.response;
+                  const fetchData = response.data.response;
                     console.log(fetchData)
                   setResults(fetchData);
                 }
@@ -46,13 +40,6 @@ console.log(results);
         }
         fetchMedia() 
     },[searchQuery])
-    // const filteredResults=results.filter((result)=>{
-    //     if(category=="all") {
-    //         return true;
-    //     }
-    //     return result.media_type === category;
-    // })
-    // console.log(filteredResults);
   return (
     <AppLayout>
         <SearchBar/>

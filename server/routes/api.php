@@ -21,3 +21,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::get("/reviews/{team_id}",[ReviewController::class,"index"]);
 Route::post("/reviews",[ReviewController::class,"store"]);
+Route::put("/reviews/{review}",[ReviewController::class,"update"]);
+Route::delete("/review/{review}",[ReviewController::class,"destroy"]);
+
