@@ -183,7 +183,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           // データがロードされた後の表示
           <>
           <Box sx={{padding:"10px"}}>
-          <Grid container spacing={{md:5}} sx={{ display: "flex", justifyContent: "space-around", borderBottom: "1px solid gray", padding: "2px 2px" }}>
+          <Grid container spacing={{md:3}} sx={{ display: "flex", justifyContent: "space-around", borderBottom: "1px solid gray", padding: "2px 2px" }}>
             <Grid item xs={2}><Typography variant="h6" component={"div"} noWrap sx={{fontSize:"15px"}}>順位</Typography></Grid>
             <Grid item xs={1}></Grid>
             <Grid item xs={3}><Typography variant="h6" component={"div"} noWrap></Typography></Grid>
@@ -214,7 +214,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
       {leagueStandings.map((data) => (
         <SwiperSlide key={data.rank}>
-          <Grid container spacing={{md:5}} sx={{ display: "flex", justifyContent: "space-around", alignItems:"center",borderBottom: "1px solid gray", margin: "2px 4px",padding:"4px" }}>
+          <Grid container spacing={{md:3}} sx={{ display: "flex", justifyContent: "space-around", alignItems:"center",borderBottom: "1px solid gray", margin: "2px 4px",padding:"2px" }}>
             <Grid item xs={2}><Typography variant="h6" component={"div"} noWrap>{data.rank}</Typography></Grid>
             <Grid item xs={1}><ImageLoader src={data.team.logo}  sx={{
               textAlign:"center",
