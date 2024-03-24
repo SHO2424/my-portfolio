@@ -362,12 +362,12 @@ const handleDelete=async(id)=>{
 
 { reviews.length > 0 ? (
         <Swiper
-         mousewheel={{ sensitivity: 3,releaseOnEdges: true}}
+         mousewheel={{ sensitivity:10,releaseOnEdges: true}}
          direction={"vertical"}
          modules={[Navigation, Pagination, Scrollbar,A11y,Mousewheel]}
          style={{marginTop:"20px" , padding:"15px",height:"80vh",cursor:"pointer"}}
         //  scrollbar={{ draggable: "true" }}
-         spaceBetween={20}
+         spaceBetween={5}
          slidesPerView={3}
         //  breakpoints={{
         //   320: {
