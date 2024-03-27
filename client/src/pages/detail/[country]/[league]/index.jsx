@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
 import { Grid,Box } from '@mui/material';
 import Link from 'next/link';
-import {Card,CardActionArea,Typography,CardMedia,CardContent,Modal, useTheme, useMediaQuery } from '@mui/material'
+import {Card,CardActionArea,Typography,CardContent,Modal, useTheme, useMediaQuery } from '@mui/material'
 import { useRouter } from 'next/router';
 import  Layout from '@/components/Layouts/Card';
 import  Button  from '@/components/Button';
@@ -15,7 +15,7 @@ import BackButton from '@/components/Layouts/backButton';
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
+// import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -57,7 +57,6 @@ const PremiDetailPage = ({detail,league}) => {
   const[loading,setLoading]=useState(true) 
   const [open, setOpen]=useState(false);
   const [leagueStandings,setLeagueStandings]=useState([]);
-  const [teams,setTeams]=useState([]);
   const handleOpen=async()=>{
     setOpen(true)
   }
@@ -95,7 +94,7 @@ const showStatistic=async()=>{
     }
 }
 const theme = useTheme();
-const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   return (
 
