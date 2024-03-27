@@ -48,25 +48,33 @@ const search = () => {
               <Typography sx={{color:"white"}}>検索中...</Typography>
           </Grid>
         ):results.length>0 ?(
-        <Grid container spacing={{xs:1,md:2}} sx={{display: 'flex', alignItems: 'stretch' ,marginTop:"50px",padding:"20px", minHeight:"600px"}}>
+        <Grid container spacing={{xs:1,md:3}} 
+        sx={{display: 'flex',
+         alignItems: 'center' ,
+         marginTop:"50px",
+         padding:{xs:"18px",lg:"40px"} 
+         }}>
         {results.map((team)=>(
         <Grid 
-        item xs={4} md={2} lg={1.5}>
+        item xs={4} md={3} lg={2.4}>
         <Card 
-        sx={{borderRadius:"10%",height:"100%",width:"100%"}}
+        sx={{borderRadius:"10%",height:"100%"}}
         >
-        <CardActionArea  sx={{width:"100%",height:"100%",flexGrow: 1}}
+        <CardActionArea  sx={{flexGrow: 1}}
         >
         <Link href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
             <Box
             sx={{display: "flex",
-            height:"100%",
-            width:"100%",
+            aspectRatio: '1 / 1',
             justifyContent: "center",
             flexDirection:"column",
             alignItems:"center",
-            paddingTop:"35px"}}>
-          <ImageLoader src={team.team.logo} sx={{width:"32px",height:"32px",textAlign:"center"}}/>
+            }}>
+          <ImageLoader src={team.team.logo} 
+          sx={{
+            display:"flex",
+            width:{xs:"40px",md:"60px"},height:{xs:"40px",md:"60px"},textAlign:"center"}}
+            />
         <CardContent sx={{width:"100%"}}>
             <Typography varient="h6" component={"div"} noWrap sx={{ textAlign:"center",width:"100%",textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{team.team.name}</Typography>
         </CardContent> 

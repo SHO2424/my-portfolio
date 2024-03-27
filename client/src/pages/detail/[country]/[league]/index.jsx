@@ -143,7 +143,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           <ImageLoader src={team.team.logo} 
           sx={{
             display:"flex",
-            width:{xs:"32px",md:"60px"},height:{xs:"32px",md:"60px"},textAlign:"center"}}/>
+            width:{xs:"40px",md:"60px"},height:{xs:"40px",md:"60px"},textAlign:"center"}}/>
 
           <CardContent sx={{width:"100%"}}>
             <Typography varient="h6" component={"div"} noWrap sx={{ textAlign:"center",width:"100%",textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{team.team.name}</Typography>
