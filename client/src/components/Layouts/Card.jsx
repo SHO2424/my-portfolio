@@ -1,6 +1,6 @@
-import { Container,Grid,CardMedia, CardActionArea } from '@mui/material'
+import { CardMedia, CardActionArea } from '@mui/material'
 import React from 'react'
-import { SwiperSlide } from 'swiper/react';
+// import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 
@@ -20,8 +20,7 @@ const Layout = ({image}) => {
            borderRadius:"50%",
            objectFit:"contain",
          }}
-         image={image}>
-         </CardMedia>
+         image={image}/>
      </CardActionArea>
     
   )

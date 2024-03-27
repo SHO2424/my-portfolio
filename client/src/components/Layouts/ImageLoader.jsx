@@ -18,7 +18,7 @@ function ImageLoader({ src ,sx}) {
       image.onload = () => setLoaded(true);
       image.onerror = () => {
         if (retryCount < maxRetry) {
-          console.log(`リトライ回数: ${retryCount + 1}`);
+          // console.log(`リトライ回数: ${retryCount + 1}`);
           setRetryCount(retryCount + 1);
         } else {
           setError(true);

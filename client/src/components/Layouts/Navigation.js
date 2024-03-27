@@ -1,6 +1,6 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
+// import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
-import Link from 'next/link'
+// import Link from 'next/link'
 import NavLink from '@/components/NavLink'
 import ResponsiveNavLink, {
     ResponsiveNavButton,
@@ -9,7 +9,7 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import styles from "./Navbar.module.css";
+// import styles from "./Navbar.module.css";
 const Navigation = ({ user }) => {
     const router = useRouter()
 
