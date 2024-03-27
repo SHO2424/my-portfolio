@@ -1,10 +1,10 @@
 
-import React, { useMemo,useCallback } from 'react';
+import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
 import { Grid,Box, Rating, CircularProgress } from '@mui/material';
-import Link from 'next/link';
+// import Link from 'next/link';
 import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material'
 // import Button from '@mui/material/Button';
 import laravelAxios from '@/lib/laravelAxios';
@@ -34,7 +34,7 @@ const TeamDetailPage = ({detail}) => {
   const [playerDetail, setPlayerDetail]=useState({});
   const [selectedPlayerId, setSelectedPlayerId] = useState(null);
   const [averageRating, setAverageRating]=useState(null);
-  const [playerRatings, setPlayerRatings] = useState({});
+  // const [playerRatings, setPlayerRatings] = useState({});
   const [editMode,setEditMode]=useState(null);
   const [editedRating,setEditedRating]=useState(null);
   const [editedContent,setEditedContent]=useState("");

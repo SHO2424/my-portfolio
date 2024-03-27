@@ -6,7 +6,7 @@ import Link from 'next/link';
 import SearchBar from "../components/SearchBar"
 import {useRouter} from "next/router"
 import ImageLoader from '@/components/Layouts/ImageLoader';
-import {Card,CardActionArea,CardMedia,CardContent,Grid ,Typography,Box } from '@mui/material'
+import {Card,CardActionArea,CardContent,Grid ,Typography,Box } from '@mui/material'
 
 const search = () => {
     const [results,setResults]=useState([]);
@@ -56,6 +56,7 @@ const search = () => {
          }}>
         {results.map((team)=>(
         <Grid 
+        key={team.id}
         item xs={4} md={3} lg={2.4}>
         <Card 
         sx={{borderRadius:"10%",height:"100%"}}

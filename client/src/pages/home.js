@@ -1,16 +1,9 @@
 import AppLayout from '@/components/Layouts/AppLayout'
-import { CardContent, Grid } from '@mui/material'
-
-import 'swiper/css';
+import {  Grid } from '@mui/material'
 import { Box} from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Link from 'next/Link';
 import Layout from '@/components/Layouts/Card';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { ConstructionOutlined } from '@mui/icons-material';
-import { display } from '@mui/system';
-
 import SearchBar from "../components/SearchBar"
 
 
@@ -27,11 +20,10 @@ const First = () => {
       <Grid item xs={4} 
       sx={{ 
         textAlign: 'center',
-        opacity: 0,
-        transform: 'translateY(40px)',
         transition: 'opacity 2s, transform 2s',
-        opacity: isMounted ? 1 : 0, transform: isMounted ? 'translateY(0)' : 'translateY(40px)'
-       }}>
+        opacity: isMounted ? 1 : 0,
+        transform: isMounted ? 'translateY(0)' : 'translateY(40px)'
+      }}>
            <Box sx={{display:"flex" ,justifyContent:"center",height:"100%",width:"100%"}}>
             <Link href={link}>
             <Layout image={img}/>
@@ -41,7 +33,6 @@ const First = () => {
     )
   }
   // データを格納するための状態
-  const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   // Rapid APIエンドポイント
 //   const apiUrl = 'https://api-football-v1.p.rapidapi.com/v3/leagues';
