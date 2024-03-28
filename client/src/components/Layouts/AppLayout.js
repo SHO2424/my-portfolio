@@ -1,7 +1,7 @@
 import Navigation from '@/components/Layouts/Navigation'
 import { useAuth } from '@/hooks/auth'
 
-const AppLayout = ({ children,style }) => {
+const AppLayout = ({ children, style }) => {
     const { user } = useAuth({ middleware: 'auth' })
 
     return (
@@ -17,8 +17,8 @@ const AppLayout = ({ children,style }) => {
 
             {/* Page Content */}
             {/* <main> */}
-                {children}
-                {/* </main> */}
+            {children}
+            {/* </main> */}
         </div>
     )
 }

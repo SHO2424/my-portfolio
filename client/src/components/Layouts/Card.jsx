@@ -1,30 +1,27 @@
-import { Container,Grid,CardMedia, CardActionArea } from '@mui/material'
+import { Container, Grid, CardMedia, CardActionArea } from '@mui/material'
 import React from 'react'
-import { SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
-
-const Layout = ({image}) => {
-  return (
-     <CardActionArea
-     sx={{
-        width:{xs:"95px",sm:"150px",md:"300px"},
-        height:{xs:"95px",sm:"150px",md:"300px"},
-        borderRadius:"50%",
-        objectFit:"contain",
-      }}>
-        <CardMedia
-          sx={{
-            width:{xs:"95px",sm:"150px",md:"300px"},
-            height:{xs:"95px",sm:"150px",md:"300px"},
-           borderRadius:"50%",
-           objectFit:"contain",
-         }}
-         image={image}>
-         </CardMedia>
-     </CardActionArea>
-    
-  )
+const Layout = ({ image }) => {
+    return (
+        <CardActionArea
+            sx={{
+                width: { xs: '95px', sm: '150px', md: '300px' },
+                height: { xs: '95px', sm: '150px', md: '300px' },
+                borderRadius: '50%',
+                objectFit: 'contain',
+            }}>
+            <CardMedia
+                sx={{
+                    width: { xs: '95px', sm: '150px', md: '300px' },
+                    height: { xs: '95px', sm: '150px', md: '300px' },
+                    borderRadius: '50%',
+                    objectFit: 'contain',
+                }}
+                image={image}></CardMedia>
+        </CardActionArea>
+    )
 }
 
 export default Layout

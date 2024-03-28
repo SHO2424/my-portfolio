@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Register from './register';
+import Register from './register'
 
 const Login = () => {
     const router = useRouter()
@@ -123,7 +123,6 @@ const Login = () => {
                             Not registered yet?
                         </Link>
 
-                     
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>

@@ -9,7 +9,7 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import styles from "./Navbar.module.css";
+import styles from './Navbar.module.css'
 const Navigation = ({ user }) => {
     const router = useRouter()
 
@@ -50,7 +50,6 @@ const Navigation = ({ user }) => {
                             </div>
                 
                         </nav> */}
-                         
                         </div>
                     </div>
 
