@@ -162,7 +162,7 @@ const theme = useTheme();
       top:"50%",
       left:"50%",
       transform:"translate(-50%,-50%)",
-      width:"70%",
+    
       bgcolor:"background.paper",
       // border: "2px solid #000",
       borderRadius:"10px",
@@ -219,6 +219,8 @@ const theme = useTheme();
               height: { md: "30px", xs: "20px" }, // xsサイズでは30px、smサイズでは20pxに設定
               width: { md: "30px", xs :"20px" },
               }}/></Grid>
+
+
             <Grid item xs={3} ><Typography variant="h6" component={"div"} noWrap sx={{width:"100%",fontSize:"15px", whiteSpace: "nowrap",textOverflow: "ellipsis",}}>{data.team.name}</Typography></Grid>
             <Grid item xs={1} sx={{display: { xs: 'none', md: 'block'}}}><Typography variant="h6" component={"div"} noWrap>{data.all.played}</Typography></Grid>
             <Grid item xs={1} sx={{display: { xs: 'none', md: 'block'}}}><Typography variant="h6" component={"div"} noWrap sx={{display: { xs: 'none', md: 'block'}}}>{data.all.win}</Typography></Grid>

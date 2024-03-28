@@ -1,5 +1,4 @@
-import React from "react";
-import{ useState, useEffect } from 'react';
+import React ,{ useState, useEffect } from 'react';
 import { CircularProgress,Box } from '@mui/material';
 
 function ImageLoader({ src ,sx}) {
