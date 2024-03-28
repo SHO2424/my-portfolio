@@ -1,4 +1,4 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
+// import ApplicationLogo from '@/components/ApplicationLogo'
 import AuthCard from '@/components/AuthCard'
 import Button from '@/components/Button'
 import GuestLayout from '@/components/Layouts/GuestLayout'
@@ -12,7 +12,7 @@ import { useState } from 'react'
 const Register = () => {
     const { register } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: '/dashboard',
+        redirectIfAuthenticated: '/home',
     })
 
     const [name, setName] = useState('')

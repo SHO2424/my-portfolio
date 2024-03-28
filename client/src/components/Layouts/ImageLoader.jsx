@@ -13,6 +13,7 @@ function ImageLoader({ src, sx }) {
             setLoaded(false)
             setError(false)
 
+<<<<<<< HEAD
             const image = new Image()
             image.src = src
             image.onload = () => setLoaded(true)
@@ -24,6 +25,17 @@ function ImageLoader({ src, sx }) {
                     setError(true)
                 }
             }
+=======
+      const image = new Image();
+      image.src = src;
+      image.onload = () => setLoaded(true);
+      image.onerror = () => {
+        if (retryCount < maxRetry) {
+          // console.log(`リトライ回数: ${retryCount + 1}`);
+          setRetryCount(retryCount + 1);
+        } else {
+          setError(true);
+>>>>>>> origin/main
         }
 
         loadImage()

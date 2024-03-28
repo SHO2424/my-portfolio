@@ -1,4 +1,5 @@
 import AppLayout from '@/components/Layouts/AppLayout'
+<<<<<<< HEAD
 import { CardContent, Grid } from '@mui/material'
 
 import 'swiper/css'
@@ -10,12 +11,51 @@ import Layout from '@/components/Layouts/Card'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ConstructionOutlined } from '@mui/icons-material'
 import { display } from '@mui/system'
+=======
+import {  Grid } from '@mui/material'
+import { Box} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/Link';
+import Layout from '@/components/Layouts/Card';
+import SearchBar from "../components/SearchBar"
+>>>>>>> origin/main
 
 import SearchBar from '../components/SearchBar'
 
 const First = () => {
+<<<<<<< HEAD
     const AnimatedGridItem = ({ link, img }) => {
         const [isMounted, setIsMounted] = useState(false)
+=======
+  const AnimatedGridItem = ({link,img}) => {
+    const [isMounted, setIsMounted] = useState(false);
+  
+    useEffect(() => {
+      // コンポーネントがマウントされた時にアニメーションをトリガー
+      setIsMounted(true);
+        setLoading(false);
+    }, []);
+    return(
+      <Grid item xs={4} 
+      sx={{ 
+        textAlign: 'center',
+        transition: 'opacity 2s, transform 2s',
+        opacity: isMounted ? 1 : 0,
+        transform: isMounted ? 'translateY(0)' : 'translateY(40px)'
+      }}>
+           <Box sx={{display:"flex" ,justifyContent:"center",height:"100%",width:"100%"}}>
+            <Link href={link}>
+            <Layout image={img}/>
+            </Link>
+           </Box>
+    </Grid>
+    )
+  }
+  // データを格納するための状態
+  const [loading, setLoading] = useState(true);
+  // Rapid APIエンドポイント
+//   const apiUrl = 'https://api-football-v1.p.rapidapi.com/v3/leagues';
+>>>>>>> origin/main
 
         useEffect(() => {
             // コンポーネントがマウントされた時にアニメーションをトリガー

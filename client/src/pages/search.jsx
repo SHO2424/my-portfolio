@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import AppLayout from '@/components/Layouts/AppLayout'
+<<<<<<< HEAD
 import Link from 'next/link'
 import SearchBar from '../components/SearchBar'
 import { useRouter } from 'next/router'
@@ -15,6 +16,13 @@ import {
     Typography,
     Box,
 } from '@mui/material'
+=======
+import Link from 'next/link';
+import SearchBar from "../components/SearchBar"
+import {useRouter} from "next/router"
+import ImageLoader from '@/components/Layouts/ImageLoader';
+import {Card,CardActionArea,CardContent,Grid ,Typography,Box } from '@mui/material'
+>>>>>>> origin/main
 
 const search = () => {
     const [results, setResults] = useState([])
@@ -49,6 +57,7 @@ const search = () => {
                 setLoading(false)
             }
         }
+<<<<<<< HEAD
         fetchMedia()
     }, [searchQuery])
     return (
@@ -143,6 +152,64 @@ const search = () => {
             )}
         </AppLayout>
     )
+=======
+        fetchMedia() 
+    },[searchQuery])
+  return (
+    <AppLayout>
+        <SearchBar/>
+        {loading? (
+              <Grid item textAlign={"center"} xs={12} sx={{height:"550px"}}>
+              <Typography sx={{color:"white"}}>検索中...</Typography>
+          </Grid>
+        ):results.length>0 ?(
+        <Grid container spacing={{xs:1,md:3}} 
+        sx={{display: 'flex',
+         alignItems: 'center' ,
+         marginTop:"50px",
+         padding:{xs:"18px",lg:"40px"} 
+         }}>
+        {results.map((team)=>(
+        <Grid 
+        key={team.id}
+        item xs={4} md={3} lg={2.4}>
+        <Card 
+        sx={{borderRadius:"10%",height:"100%"}}
+        >
+        <CardActionArea  sx={{flexGrow: 1}}
+        >
+        <Link href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
+            <Box
+            sx={{display: "flex",
+            aspectRatio: '1 / 1',
+            justifyContent: "center",
+            flexDirection:"column",
+            alignItems:"center",
+            }}>
+          <ImageLoader src={team.team.logo} 
+          sx={{
+            display:"flex",
+            width:{xs:"40px",md:"60px"},height:{xs:"40px",md:"60px"},textAlign:"center"}}
+            />
+        <CardContent sx={{width:"100%"}}>
+            <Typography varient="h6" component={"div"} noWrap sx={{ textAlign:"center",width:"100%",textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{team.team.name}</Typography>
+        </CardContent> 
+            </Box>
+        </Link>
+        </CardActionArea>
+    </Card>
+    </Grid>
+    ))}
+    </Grid>
+        ):(
+            <Grid item textAlign={"center"} xs={12} sx={{height:"550px"}}>
+                <Typography sx={{color:"white"}}>検索結果が見つかりませんでした</Typography>
+            </Grid>
+        )
+    }
+    </AppLayout>
+  )
+>>>>>>> origin/main
 }
 
 export default search

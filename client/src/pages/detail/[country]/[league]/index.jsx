@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -60,6 +61,83 @@ const PremiDetailPage = ({ detail, league }) => {
         Germany: {
             logo: '/Bundesliga_logo.jpeg',
             name: 'Bundesliga',
+=======
+
+import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+import AppLayout from '@/components/Layouts/AppLayout';
+import { Grid,Box } from '@mui/material';
+import Link from 'next/link';
+import {Card,CardActionArea,Typography,CardContent,Modal, useTheme, useMediaQuery } from '@mui/material'
+import { useRouter } from 'next/router';
+import  Layout from '@/components/Layouts/Card';
+import  Button  from '@/components/Button';
+import { CircularProgress } from '@mui/material';
+import ImageLoader from '@/components/Layouts/ImageLoader';
+import BackButton from '@/components/Layouts/backButton';
+import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/mousewheel';
+
+
+const PremiDetailPage = ({detail,league}) => {
+
+  const router = useRouter();
+  const {country}=router.query;
+  console.log(league);
+  const countryLogos = {
+    England: {
+      logo:"/Premier_logo.png",
+      name:"Premier League"
+    },
+    Spain: {
+      logo:"/Laliga_log2.jpeg",
+      name:"LaLiga Santander",
+    },
+    Italy: {
+      logo:"/SerieA_logo.webp",
+      name:"SerieA",
+    },
+    France: {
+      logo:"/Ligue1_logo.webp",
+      name:"Ligue1",
+    },
+    Germany:{
+      logo: "/Bundesliga_logo.jpeg",
+      name: "Bundesliga"
+    }
+  };
+  const leagueImg = countryLogos[country].logo;
+  const leagueName = countryLogos[country].name;
+  console.log(detail);
+  // ページコンポーネントの内容
+  const[loading,setLoading]=useState(true) 
+  const [open, setOpen]=useState(false);
+  const [leagueStandings,setLeagueStandings]=useState([]);
+  const handleOpen=async()=>{
+    setOpen(true)
+  }
+const handleClose=()=>{
+  setOpen(false)
+}
+const showStatistic=async()=>{
+  handleOpen();
+  const year = new Date().getFullYear();
+  try{
+    const apiUrl = 'https://api-football-v1.p.rapidapi.com/v3/standings';
+    const response = await axios.get(apiUrl, {
+        params: {
+          season: year -1,
+          league: league
+          
+>>>>>>> origin/main
         },
     }
     const leagueImg = countryLogos[country].logo
@@ -73,6 +151,7 @@ const PremiDetailPage = ({ detail, league }) => {
     const handleOpen = async () => {
         setOpen(true)
     }
+<<<<<<< HEAD
     const handleClose = () => {
         setOpen(false)
     }
@@ -105,6 +184,13 @@ const PremiDetailPage = ({ detail, league }) => {
     }
     const theme = useTheme()
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+=======
+}
+const theme = useTheme();
+
+
+  return (
+>>>>>>> origin/main
 
     return (
         <AppLayout>
@@ -112,6 +198,7 @@ const PremiDetailPage = ({ detail, league }) => {
                 <BackButton />
             </Box>
             <Box
+<<<<<<< HEAD
                 sx={{
                     marginTop: '20px',
                     marginBottom: '30px',
@@ -134,6 +221,23 @@ const PremiDetailPage = ({ detail, league }) => {
                     {leagueName}
                 </Typography>
                 <Button onClick={showStatistic}>順位表</Button>
+=======
+            sx={{display: "flex",
+            aspectRatio: '1 / 1',
+            justifyContent: "center",
+            flexDirection:"column",
+            alignItems:"center",
+            // paddingTop:"35px"
+            }}>
+          <ImageLoader src={team.team.logo} 
+          sx={{
+            display:"flex",
+            width:{xs:"40px",md:"60px"},height:{xs:"40px",md:"60px"},textAlign:"center"}}/>
+
+          <CardContent sx={{width:"100%"}}>
+            <Typography varient="h6" component={"div"} noWrap sx={{ textAlign:"center",width:"100%",textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{team.team.name}</Typography>
+          </CardContent> 
+>>>>>>> origin/main
             </Box>
             <Grid
                 container
