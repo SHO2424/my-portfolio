@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import {Box,Typography} from '@mui/material';
-
-
+import { Box, Typography } from '@mui/material';
 
 const BackButton = () => {
-    const router = useRouter()
+    const router = useRouter();
     return (
         <button onClick={() => router.back()}>
             <Box display="flex" alignItems="center">
@@ -17,6 +15,6 @@ const BackButton = () => {
                 </Typography>
             </Box>
         </button>
-    )
-
-export default BackButton
+    );
+};
+export default BackButton;

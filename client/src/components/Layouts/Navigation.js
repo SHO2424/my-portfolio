@@ -9,11 +9,11 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const Navigation = ({ user }) => {
-    const router = useRouter()
+    const router = useRouter();
 
-    const { logout } = useAuth()
+    const { logout } = useAuth();
 
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
     return (
         <nav className="bg-black border-b border-gray-100">
@@ -164,7 +164,7 @@ const Navigation = ({ user }) => {
                 </div>
             )}
         </nav>
-    )
-}
+    );
+};
 
-export default Navigation
+export default Navigation;

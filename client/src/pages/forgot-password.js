@@ -1,30 +1,30 @@
 // import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthSessionStatus from '@/components/AuthSessionStatus'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import InputError from '@/components/InputError'
-import Label from '@/components/Label'
+import AuthCard from '@/components/AuthCard';
+import AuthSessionStatus from '@/components/AuthSessionStatus';
+import Button from '@/components/Button';
+import GuestLayout from '@/components/Layouts/GuestLayout';
+import Input from '@/components/Input';
+import InputError from '@/components/InputError';
+import Label from '@/components/Label';
 // import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
-import { useState } from 'react'
+import { useAuth } from '@/hooks/auth';
+import { useState } from 'react';
 
 const ForgotPassword = () => {
     const { forgotPassword } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
-    })
+    });
 
-    const [email, setEmail] = useState('')
-    const [errors, setErrors] = useState([])
-    const [status, setStatus] = useState(null)
+    const [email, setEmail] = useState('');
+    const [errors, setErrors] = useState([]);
+    const [status, setStatus] = useState(null);
 
     const submitForm = event => {
-        event.preventDefault()
+        event.preventDefault();
 
-        forgotPassword({ email, setErrors, setStatus })
-    }
+        forgotPassword({ email, setErrors, setStatus });
+    };
 
     return (
         <GuestLayout>
@@ -62,7 +62,7 @@ const ForgotPassword = () => {
                 </form>
             </AuthCard>
         </GuestLayout>
-    )
-}
+    );
+};
 
-export default ForgotPassword
+export default ForgotPassword;

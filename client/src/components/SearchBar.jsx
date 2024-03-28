@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import { Box, TextField } from '@mui/material'
-import Button from './Button'
-import SearchIcon from '@mui/icons-material/Search'
-import { useRouter } from 'next/router'
+import React, { useState } from 'react';
+import { Box, TextField } from '@mui/material';
+import Button from './Button';
+import SearchIcon from '@mui/icons-material/Search';
+import { useRouter } from 'next/router';
 const SearchBar = () => {
-    const [query, setQuery] = useState('')
-    const router = useRouter()
+    const [query, setQuery] = useState('');
+    const router = useRouter();
     const handleChange = e => {
-        setQuery(e.target.value)
-    }
+        setQuery(e.target.value);
+    };
     const searchQuery = e => {
-        e.preventDefault()
+        e.preventDefault();
         if (!query.trim()) {
-            return
+            return;
         }
-        router.push(`search?query=${encodeURIComponent(query)}`)
-    }
+        router.push(`search?query=${encodeURIComponent(query)}`);
+    };
     return (
         <Box
             component={'form'}
@@ -47,7 +47,7 @@ const SearchBar = () => {
                 <SearchIcon />
             </Button>
         </Box>
-    )
-}
+    );
+};
 
-export default SearchBar
+export default SearchBar;

@@ -2,18 +2,32 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
-import { Grid,Box, Rating, CircularProgress } from '@mui/material';
-import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material';
+import { Grid, Box, Rating, CircularProgress } from '@mui/material';
+import {
+    Card,
+    CardActionArea,
+    Typography,
+    CardMedia,
+    CardContent,
+    Modal,
+    ButtonGroup,
+} from '@mui/material';
 // import Button from '@mui/material/Button';
 import laravelAxios from '@/lib/laravelAxios';
 import StarIcon from '@mui/icons-material/Star';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import BackButton from '@/components/Layouts/backButton';
 import { useRouter } from 'next/router';
-import  Button  from '@/components/Button';
+import Button from '@/components/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import {useAuth} from "@/hooks/auth";
-import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper/modules';
+import { useAuth } from '@/hooks/auth';
+import {
+    Navigation,
+    Pagination,
+    Scrollbar,
+    A11y,
+    Mousewheel,
+} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -22,34 +36,33 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/mousewheel';
 
 const TeamDetailPage = ({ detail }) => {
-    const [activeSquads, setActiveSquads] = useState([])
-    const [reviewOpen, setReviewOpen] = useState(false)
-    const [detailOpen, setDetailOpen] = useState(false)
-    const [reviewsOpen, setReviewsOpen] = useState(false)
-    const [rating, setRating] = useState(0)
-    const [review, setReview] = useState('')
-    const [reviews, setReviews] = useState([])
-    const [playerDetail, setPlayerDetail] = useState({})
-    const [selectedPlayerId, setSelectedPlayerId] = useState(null)
-    const [averageRating, setAverageRating] = useState(null)
-    const [playerRatings, setPlayerRatings] = useState({})
-    const [editMode, setEditMode] = useState(null)
-    const [editedRating, setEditedRating] = useState(null)
-    const [editedContent, setEditedContent] = useState('')
-    const [loading, setLoading] = useState(true)
-    const [isEmpty, setIsEmpty] = useState(false)
-    const router = useRouter()
-    const { user } = useAuth({ middleware: 'auth' })
-    const { path } = router.query // クエリパラメータからuserIdを取得
-    const { name } = router.query // クエリパラメータからuserIdを取得
-    const { id } = router.query // クエリパラメータからuserIdを取得
-    const { country } = router.query
-    const { league } = router.query
-    console.log(country)
-    console.log(league)
-    console.log({ id })
+    const [activeSquads, setActiveSquads] = useState([]);
+    const [reviewOpen, setReviewOpen] = useState(false);
+    const [detailOpen, setDetailOpen] = useState(false);
+    const [reviewsOpen, setReviewsOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [review, setReview] = useState('');
+    const [reviews, setReviews] = useState([]);
+    const [playerDetail, setPlayerDetail] = useState({});
+    const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+    const [averageRating, setAverageRating] = useState(null);
+    const [editMode, setEditMode] = useState(null);
+    const [editedRating, setEditedRating] = useState(null);
+    const [editedContent, setEditedContent] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [isEmpty, setIsEmpty] = useState(false);
+    const router = useRouter();
+    const { user } = useAuth({ middleware: 'auth' });
+    const { path } = router.query; // クエリパラメータからuserIdを取得
+    const { name } = router.query; // クエリパラメータからuserIdを取得
+    const { id } = router.query; // クエリパラメータからuserIdを取得
+    const { country } = router.query;
+    const { league } = router.query;
+    console.log(country);
+    console.log(league);
+    console.log({ id });
 
-    console.log(detail)
+    console.log(detail);
     useEffect(() => {
         if (
             !detail ||
@@ -57,162 +70,163 @@ const TeamDetailPage = ({ detail }) => {
             !detail[0].players ||
             detail[0].players.length === 0
         ) {
-            setIsEmpty(true)
-            setLoading(false)
+            setIsEmpty(true);
+            setLoading(false);
         } else {
             const fetchReviews = async () => {
                 // const squads =useCallback(detail[0].players,[detail]);
-                const squads = detail[0].players
+                const squads = detail[0].players;
                 try {
-                    setIsEmpty(false)
-                    setActiveSquads(squads)
-                    console.log(activeSquads)
-                    console.log('再レンダリング！')
-                    const response = await laravelAxios.get(`api/reviews/${id}`)
-                    const fetchData = response.data
-                    console.log(fetchData)
-                    setReviews(fetchData)
-                    updateAverageRating(fetchData)
-                    setLoading(false)
+                    setIsEmpty(false);
+                    setActiveSquads(squads);
+                    console.log(activeSquads);
+                    console.log('再レンダリング！');
+                    const response = await laravelAxios.get(
+                        `api/reviews/${id}`,
+                    );
+                    const fetchData = response.data;
+                    console.log(fetchData);
+                    setReviews(fetchData);
+                    updateAverageRating(fetchData);
+                    setLoading(false);
                 } catch (err) {
-                    console.log(err)
+                    console.log(err);
                 }
-            }
-            fetchReviews()
-
+            };
+            fetchReviews();
         }
-    }, [id])
+    }, [id]);
 
     const handleOpen = async () => {
-        setReviewOpen(true)
-    }
+        setReviewOpen(true);
+    };
     const detailHandleOpen = async () => {
-        setDetailOpen(true)
-    }
+        setDetailOpen(true);
+    };
     const handleClose = () => {
-        setReviewOpen(false)
-    }
+        setReviewOpen(false);
+    };
     const detailHandleClose = () => {
-        setDetailOpen(false)
-    }
+        setDetailOpen(false);
+    };
     const handleReviewChange = e => {
-        setReview(e.target.value)
-        console.log(review)
-    }
+        setReview(e.target.value);
+        console.log(review);
+    };
     const handleRatingChange = (e, newValue) => {
         // console.log(newValue);
-        setRating(newValue)
-        console.log(rating)
-    }
+        setRating(newValue);
+        console.log(rating);
+    };
     const handleEdit = review => {
-        setEditMode(review.id)
-        setEditedRating(review.rating)
-        setEditedContent(review.content)
-    }
+        setEditMode(review.id);
+        setEditedRating(review.rating);
+        setEditedContent(review.content);
+    };
     const isButtonDisabled = (rating, content) => {
-        return !rating || !content.trim()
-    }
-    const isReviewbuttonDisabled = isButtonDisabled(rating, review)
-    const isEditbuttonDisabled = isButtonDisabled(editedRating, editedContent)
+        return !rating || !content.trim();
+    };
+    const isReviewbuttonDisabled = isButtonDisabled(rating, review);
+    const isEditbuttonDisabled = isButtonDisabled(editedRating, editedContent);
 
     const handlePlayer = async player => {
-        detailHandleOpen()
-        const playerId = player.id
-        console.log(playerId)
+        detailHandleOpen();
+        const playerId = player.id;
+        console.log(playerId);
         const result = activeSquads.find(function (player) {
-            return player.id === playerId
-        })
-        console.log(result)
-        setPlayerDetail(result)
-        setSelectedPlayerId(playerId)
-        console.log('Clicked Player ID:', selectedPlayerId)
-    }
+            return player.id === playerId;
+        });
+        console.log(result);
+        setPlayerDetail(result);
+        setSelectedPlayerId(playerId);
+        console.log('Clicked Player ID:', selectedPlayerId);
+    };
     const handleConfirmEdit = async reviewId => {
-        console.log(reviewId)
+        console.log(reviewId);
         try {
             const response = await laravelAxios.put(`api/reviews/${reviewId}`, {
                 content: editedContent,
                 rating: editedRating,
-            })
-            const updatedReview = response.data
-            console.log(updatedReview)
+            });
+            const updatedReview = response.data;
+            console.log(updatedReview);
             const updatedReviews = reviews.map(review => {
                 if (review.id == reviewId) {
                     return {
                         ...review,
                         content: updatedReview.content,
                         rating: updatedReview.rating,
-                    }
+                    };
                 }
-                return review
-            })
-            console.log(updatedReviews)
-            setReviews(updatedReviews)
-            updateAverageRating(updatedReviews)
-            setEditMode(null)
+                return review;
+            });
+            console.log(updatedReviews);
+            setReviews(updatedReviews);
+            updateAverageRating(updatedReviews);
+            setEditMode(null);
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-    }
+    };
 
     const handleReviewAdd = async () => {
-        handleClose()
-        console.log(id)
+        handleClose();
+        console.log(id);
         try {
             const response = await laravelAxios.post(`api/reviews`, {
                 content: review,
                 rating: rating,
                 team_id: id,
-            })
-            const newRating = response.data
-            console.log(newRating)
-            setReviews([...reviews, newRating])
-            console.log(reviews)
-            setRating(0)
-            const updateReviews = [...reviews, newRating]
-            updateAverageRating(updateReviews)
+            });
+            const newRating = response.data;
+            console.log(newRating);
+            setReviews([...reviews, newRating]);
+            console.log(reviews);
+            setRating(0);
+            const updateReviews = [...reviews, newRating];
+            updateAverageRating(updateReviews);
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-    }
+    };
 
     const updateAverageRating = updateReviews => {
         if (updateReviews.length > 0) {
             const totalRating = updateReviews.reduce(
                 (acc, review) => acc + review.rating,
                 0,
-            )
-            console.log(totalRating)
-            console.log(updateReviews.length)
-            const average = (totalRating / updateReviews.length).toFixed(1)
-            console.log(average)
-            setAverageRating(average)
+            );
+            console.log(totalRating);
+            console.log(updateReviews.length);
+            const average = (totalRating / updateReviews.length).toFixed(1);
+            console.log(average);
+            setAverageRating(average);
         } else {
-            setAverageRating(null)
+            setAverageRating(null);
         }
-    }
+    };
     const handleReviewsOpen = () => {
-        setReviewsOpen(true)
-    }
+        setReviewsOpen(true);
+    };
     const handleReviewsClose = () => {
-        setReviewsOpen(false)
-    }
+        setReviewsOpen(false);
+    };
     const handleDelete = async id => {
-        console.log(id)
+        console.log(id);
         if (window.confirm('レビューを本当に削除してもよろしいですか')) {
             try {
-                const response = await laravelAxios.delete(`api/review/${id}`)
-                console.log(response)
+                const response = await laravelAxios.delete(`api/review/${id}`);
+                console.log(response);
                 const filteredReviews = reviews.filter(
                     review => review.id !== id,
-                )
-                setReviews(filteredReviews)
-                updateAverageRating(filteredReviews)
+                );
+                setReviews(filteredReviews);
+                updateAverageRating(filteredReviews);
             } catch (err) {
-                console.log(err)
+                console.log(err);
             }
         }
-    }
+    };
 
     if (loading) {
         return (
@@ -225,7 +239,7 @@ const TeamDetailPage = ({ detail }) => {
                 }}>
                 <CircularProgress /> {/* 読み込み中の表示 */}
             </div>
-        )
+        );
     }
 
     if (isEmpty) {
@@ -246,7 +260,7 @@ const TeamDetailPage = ({ detail }) => {
                     </Typography>
                 </Box>
             </AppLayout>
-        )
+        );
     }
     return (
         <AppLayout>
@@ -496,7 +510,7 @@ const TeamDetailPage = ({ detail }) => {
                                                                 ) => {
                                                                     setEditedRating(
                                                                         newValue,
-                                                                    )
+                                                                    );
                                                                 }}
                                                             />
                                                             <TextareaAutosize
@@ -512,7 +526,7 @@ const TeamDetailPage = ({ detail }) => {
                                                                     setEditedContent(
                                                                         e.target
                                                                             .value,
-                                                                    )
+                                                                    );
                                                                 }}
                                                             />
                                                         </>
@@ -659,13 +673,13 @@ const TeamDetailPage = ({ detail }) => {
                 </Box>
             </Modal>
         </AppLayout>
-    )
-}
+    );
+};
 export async function getServerSideProps(context) {
-    const { teamId } = context.params
+    const { teamId } = context.params;
     try {
         const apiUrl =
-            'https://api-football-v1.p.rapidapi.com/v3/players/squads'
+            'https://api-football-v1.p.rapidapi.com/v3/players/squads';
         const response = await axios.get(apiUrl, {
             params: {
                 team: teamId,
@@ -675,15 +689,15 @@ export async function getServerSideProps(context) {
                     'ea55e722f8msh2fd3cb06768de2bp1d6537jsne9964b9d433e',
                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
             },
-        })
-        const featchData = response.data.response
+        });
+        const featchData = response.data.response;
         // console.log(searchCountry)
-        console.log(response.data.response)
+        console.log(response.data.response);
         return {
             props: { detail: featchData },
-        }
+        };
     } catch {
-        return { notFound: true }
+        return { notFound: true };
     }
 }
-export default TeamDetailPage
+export default TeamDetailPage;

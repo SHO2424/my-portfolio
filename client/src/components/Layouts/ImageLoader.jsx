@@ -1,19 +1,18 @@
 
-import React from "react";
-import{ useState, useEffect } from 'react';
+import React ,{ useState, useEffect } from 'react';
 import { CircularProgress,Box } from '@mui/material';
 
 function ImageLoader({ src, sx }) {
-    const [loaded, setLoaded] = useState(false)
-    const [error, setError] = useState(false)
-    const [retryCount, setRetryCount] = useState(0)
-    const maxRetry = 100 // リトライの最大回数
+    const [loaded, setLoaded] = useState(false);
+    const [error, setError] = useState(false);
+    const [retryCount, setRetryCount] = useState(0);
+    const maxRetry = 100 ;
 
     useEffect(() => {
         // 画像読み込みのための関数
         const loadImage = () => {
-            setLoaded(false)
-            setError(false)
+            setLoaded(false);
+            setError(false);
 
       const image = new Image();
       image.src = src;
@@ -27,9 +26,8 @@ function ImageLoader({ src, sx }) {
 
         }
 
-        loadImage()
-        // 依存配列に retryCount を追加して、リトライ回数が変更されたら再読み込みを試みる
-    }, [src, retryCount])
+        loadImage();
+    }, [src, retryCount]);
 
     if (error) {
         return <div>Error loading image.</div>

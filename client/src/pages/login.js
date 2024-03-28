@@ -11,29 +11,29 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 const Login = () => {
-    const router = useRouter()
+    const router = useRouter();
 
     const { login } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/home',
-    })
+    });
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [shouldRemember, setShouldRemember] = useState(false)
-    const [errors, setErrors] = useState([])
-    const [status, setStatus] = useState(null)
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [shouldRemember, setShouldRemember] = useState(false);
+    const [errors, setErrors] = useState([]);
+    const [status, setStatus] = useState(null);
 
     useEffect(() => {
         if (router.query.reset?.length > 0 && errors.length === 0) {
-            setStatus(atob(router.query.reset))
+            setStatus(atob(router.query.reset));
         } else {
-            setStatus(null)
+            setStatus(null);
         }
-    })
+    });
 
     const submitForm = async event => {
-        event.preventDefault()
+        event.preventDefault();
 
         login({
             email,
@@ -41,8 +41,8 @@ const Login = () => {
             remember: shouldRemember,
             setErrors,
             setStatus,
-        })
-    }
+        });
+    };
 
     return (
         <GuestLayout>
@@ -121,13 +121,12 @@ const Login = () => {
                             Not registered yet?
                         </Link>
 
-                     
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>
             </AuthCard>
         </GuestLayout>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;
