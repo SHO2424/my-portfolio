@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
-import AppLayout from '@/components/Layouts/AppLayout'
+import AppLayout from '@/components/Layouts/AppLayout';
 import Link from 'next/link';
-import SearchBar from "../components/SearchBar"
-import {useRouter} from "next/router"
+import SearchBar from "../components/SearchBar";
+import {useRouter} from "next/router";
 import ImageLoader from '@/components/Layouts/ImageLoader';
-import {Card,CardActionArea,CardContent,Grid ,Typography,Box } from '@mui/material'
+import {Card,CardActionArea,CardContent,Grid ,Typography,Box } from '@mui/material';
 
 const search = () => {
     const [results,setResults]=useState([]);

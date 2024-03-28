@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import {Box,Typography} from '@mui/material'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {Box,Typography} from '@mui/material';
 
 const  BackButton=()=> {
   const router = useRouter();

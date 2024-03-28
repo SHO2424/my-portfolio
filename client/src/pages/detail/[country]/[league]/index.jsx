@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
 import { Grid,Box } from '@mui/material';
 import Link from 'next/link';
-import {Card,CardActionArea,Typography,CardContent,Modal, useTheme, useMediaQuery } from '@mui/material'
+import {Card,CardActionArea,Typography,CardContent,Modal, useTheme } from '@mui/material';
 import { useRouter } from 'next/router';
 import  Layout from '@/components/Layouts/Card';
 import  Button  from '@/components/Button';

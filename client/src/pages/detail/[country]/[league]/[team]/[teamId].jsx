@@ -5,7 +5,7 @@ import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
 import { Grid,Box, Rating, CircularProgress } from '@mui/material';
 // import Link from 'next/link';
-import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material'
+import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material';
 // import Button from '@mui/material/Button';
 import laravelAxios from '@/lib/laravelAxios';
 import StarIcon from '@mui/icons-material/Star';
@@ -14,7 +14,7 @@ import BackButton from '@/components/Layouts/backButton';
 import { useRouter } from 'next/router';
 import  Button  from '@/components/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import {useAuth} from "@/hooks/auth"
+import {useAuth} from "@/hooks/auth";
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

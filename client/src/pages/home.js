@@ -1,10 +1,10 @@
-import AppLayout from '@/components/Layouts/AppLayout'
-import {  Grid } from '@mui/material'
+import AppLayout from '@/components/Layouts/AppLayout';
+import {  Grid } from '@mui/material';
 import { Box} from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/Link';
 import Layout from '@/components/Layouts/Card';
-import SearchBar from "../components/SearchBar"
+import SearchBar from "../components/SearchBar";
 
 
 const First = () => {

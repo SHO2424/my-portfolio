@@ -1,5 +1,5 @@
-import { CardMedia, CardActionArea } from '@mui/material'
-import React from 'react'
+import React from 'react';
+import { CardMedia, CardActionArea } from '@mui/material';
 // import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
