@@ -18,16 +18,13 @@ function ImageLoader({ src ,sx}) {
       image.onload = () => setLoaded(true);
       image.onerror = () => {
         if (retryCount < maxRetry) {
-          // console.log(`リトライ回数: ${retryCount + 1}`);
           setRetryCount(retryCount + 1);
         } else {
           setError(true);
         }
       };
     };
-
     loadImage();
-    // 依存配列に retryCount を追加して、リトライ回数が変更されたら再読み込みを試みる
   }, [src, retryCount]);
 
   if (error) {
