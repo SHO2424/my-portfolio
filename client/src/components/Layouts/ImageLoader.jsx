@@ -28,7 +28,7 @@ function ImageLoader({ src ,sx}) {
   }, [src, retryCount]);
 
   if (error) {
-    return <div>Error loading image.</div>;
+    return <div>Error loading image.</div>
   }
 
   return (
