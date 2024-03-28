@@ -1,19 +1,13 @@
-// import ApplicationLogo from '@/components/ApplicationLogo'
-import Dropdown from '@/components/Dropdown'
-// import Link from 'next/link'
-import NavLink from '@/components/NavLink'
+import Dropdown from '@/components/Dropdown';
+import NavLink from '@/components/NavLink';
 import ResponsiveNavLink, {
     ResponsiveNavButton,
-} from '@/components/ResponsiveNavLink'
-import { DropdownButton } from '@/components/DropdownLink'
-import { useAuth } from '@/hooks/auth'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
-<<<<<<< HEAD
-import styles from './Navbar.module.css'
-=======
-// import styles from "./Navbar.module.css";
->>>>>>> origin/main
+} from '@/components/ResponsiveNavLink';
+import { DropdownButton } from '@/components/DropdownLink';
+import { useAuth } from '@/hooks/auth';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+
 const Navigation = ({ user }) => {
     const router = useRouter()
 

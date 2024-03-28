@@ -1,51 +1,26 @@
-<<<<<<< HEAD
-import React, { useMemo, useCallback } from 'react'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import AppLayout from '@/components/Layouts/AppLayout'
-import { Grid, Box, Rating, CircularProgress } from '@mui/material'
-import Link from 'next/link'
-import {
-    Card,
-    CardActionArea,
-    Typography,
-    CardMedia,
-    CardContent,
-    Modal,
-    ButtonGroup,
-} from '@mui/material'
-=======
-
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
 import { Grid,Box, Rating, CircularProgress } from '@mui/material';
-// import Link from 'next/link';
-import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material'
->>>>>>> origin/main
+import {Card,CardActionArea,Typography,CardMedia,CardContent ,Modal,ButtonGroup} from '@mui/material';
 // import Button from '@mui/material/Button';
-import laravelAxios from '@/lib/laravelAxios'
-import StarIcon from '@mui/icons-material/Star'
-import ImageLoader from '@/components/Layouts/ImageLoader'
-import BackButton from '@/components/Layouts/backButton'
-import { useRouter } from 'next/router'
-import Button from '@/components/Button'
-import { TextareaAutosize } from '@mui/base/TextareaAutosize'
-import { useAuth } from '@/hooks/auth'
-import {
-    Navigation,
-    Pagination,
-    Scrollbar,
-    A11y,
-    Mousewheel,
-} from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
-import 'swiper/css/mousewheel'
+import laravelAxios from '@/lib/laravelAxios';
+import StarIcon from '@mui/icons-material/Star';
+import ImageLoader from '@/components/Layouts/ImageLoader';
+import BackButton from '@/components/Layouts/backButton';
+import { useRouter } from 'next/router';
+import  Button  from '@/components/Button';
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import {useAuth} from "@/hooks/auth";
+import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/mousewheel';
+
 const TeamDetailPage = ({ detail }) => {
     const [activeSquads, setActiveSquads] = useState([])
     const [reviewOpen, setReviewOpen] = useState(false)
@@ -74,7 +49,6 @@ const TeamDetailPage = ({ detail }) => {
     console.log(league)
     console.log({ id })
 
-<<<<<<< HEAD
     console.log(detail)
     useEffect(() => {
         if (
@@ -105,59 +79,7 @@ const TeamDetailPage = ({ detail }) => {
                 }
             }
             fetchReviews()
-=======
-  const [activeSquads,setActiveSquads]=useState([]);
-  const [reviewOpen, setReviewOpen]=useState(false);
-  const [detailOpen, setDetailOpen]=useState(false);
-  const [reviewsOpen, setReviewsOpen]=useState(false);
-  const [rating, setRating]=useState(0);
-  const [review,setReview]=useState("");
-  const [reviews, setReviews]=useState([]);
-  const [playerDetail, setPlayerDetail]=useState({});
-  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
-  const [averageRating, setAverageRating]=useState(null);
-  // const [playerRatings, setPlayerRatings] = useState({});
-  const [editMode,setEditMode]=useState(null);
-  const [editedRating,setEditedRating]=useState(null);
-  const [editedContent,setEditedContent]=useState("");
-  const[loading,setLoading]=useState(true); 
-  const [isEmpty, setIsEmpty] = useState(false);
-  const router = useRouter();
-  const{user}=useAuth({middleware:"auth"});
-  const { path } = router.query; // クエリパラメータからuserIdを取得  
-  const { name } = router.query; // クエリパラメータからuserIdを取得  
-  const { id } = router.query; // クエリパラメータからuserIdを取得  
-  const {country}=router.query;
-  const {league}=router.query;
-  console.log(country)
-  console.log(league)
-  console.log({id});
-  
-  console.log(detail);
-  useEffect(()=>{
-    if (!detail || detail.length === 0 || !detail[0].players || detail[0].players.length === 0) {
-      setIsEmpty(true);
-      setLoading(false)
-    } else{
-      const fetchReviews =async()=>{
-        // const squads =useCallback(detail[0].players,[detail]);
-        const squads=detail[0].players;
-        try{
-          setIsEmpty(false);
-          setActiveSquads(squads);
-          console.log(activeSquads);
-          console.log("再レンダリング！")
-          const response= await laravelAxios.get(`api/reviews/${id}`)
-          const fetchData=response.data;
-          console.log(fetchData);
-          setReviews(fetchData);
-          updateAverageRating(fetchData)
-          setLoading(false)
-        }
-        catch(err)
-        {
-          console.log(err)
->>>>>>> origin/main
+
         }
     }, [id])
 

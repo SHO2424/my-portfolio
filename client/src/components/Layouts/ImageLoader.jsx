@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { CircularProgress, Box } from '@mui/material'
+
+import React from "react";
+import{ useState, useEffect } from 'react';
+import { CircularProgress,Box } from '@mui/material';
 
 function ImageLoader({ src, sx }) {
     const [loaded, setLoaded] = useState(false)
@@ -13,19 +15,6 @@ function ImageLoader({ src, sx }) {
             setLoaded(false)
             setError(false)
 
-<<<<<<< HEAD
-            const image = new Image()
-            image.src = src
-            image.onload = () => setLoaded(true)
-            image.onerror = () => {
-                if (retryCount < maxRetry) {
-                    console.log(`リトライ回数: ${retryCount + 1}`)
-                    setRetryCount(retryCount + 1)
-                } else {
-                    setError(true)
-                }
-            }
-=======
       const image = new Image();
       image.src = src;
       image.onload = () => setLoaded(true);
@@ -35,7 +24,7 @@ function ImageLoader({ src, sx }) {
           setRetryCount(retryCount + 1);
         } else {
           setError(true);
->>>>>>> origin/main
+
         }
 
         loadImage()
