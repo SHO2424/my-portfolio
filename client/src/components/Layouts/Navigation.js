@@ -48,7 +48,6 @@ const Navigation = ({ user }) => {
                             </div>
                 
                         </nav> */}
-                         
                         </div>
                     </div>
 
