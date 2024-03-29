@@ -9,8 +9,7 @@ const Layout = ({ image }) => {
                 height: { xs: '95px', sm: '150px', md: '300px' },
                 borderRadius: '50%',
                 objectFit: 'contain',
-            }}
-        >
+            }}>
             <CardMedia
                 sx={{
                     width: { xs: '95px', sm: '150px', md: '300px' },

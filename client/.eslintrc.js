@@ -46,7 +46,9 @@ module.exports = {
         'react/require-default-props': 0,
         'react/react-in-jsx-scope': 0,
         'linebreak-style': ['error', 'unix'],
+
         'semi' : 'off',
+
         'prettier/prettier': [
             'error',
             { endOfLine: 'auto' },

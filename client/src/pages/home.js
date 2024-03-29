@@ -24,16 +24,14 @@ const First = () => {
                     transition: 'opacity 2s, transform 2s',
                     opacity: isMounted ? 1 : 0,
                     transform: isMounted ? 'translateY(0)' : 'translateY(40px)',
-                }}
-            >
+                }}>
                 <Box
                     sx={{
                         display: 'flex',
                         justifyContent: 'center',
                         height: '100%',
                         width: '100%',
-                    }}
-                >
+                    }}>
                     <Link href={link}>
                         <Layout image={img} />
                     </Link>
@@ -69,8 +67,7 @@ const First = () => {
                         py: '50px', // Y 軸（上下）のパディングを 50px に設定
                         display: 'flex',
                         justifyContent: 'center',
-                    }}
-                >
+                    }}>
                     <AnimatedGridItem
                         link={'detail/England/39'}
                         img={'Premier_logo.png'}

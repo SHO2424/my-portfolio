@@ -45,8 +45,7 @@ function ImageLoader({ src, sx }) {
                         justifyContent: 'center',
                         alignItems: 'center',
                         height: '100%', // または必要な高さに応じて調整
-                    }}
-                >
+                    }}>
                     <CircularProgress />
                 </Box>
             )}
