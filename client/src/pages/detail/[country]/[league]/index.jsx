@@ -101,7 +101,7 @@ const PremiDetailPage = ({ detail, league }) => {
             setLoading(false);
         }
     };
-    const theme = useTheme();
+    // const theme = useTheme();
 
     return (
         <AppLayout>
@@ -143,7 +143,7 @@ const PremiDetailPage = ({ detail, league }) => {
                     // justifyContent:"space-around"
                 }}>
                 {detail.map(team => (
-                    <Grid item xs={4} md={3} lg={2.4}>
+                    <Grid item key={team.id} xs={4} md={3} lg={2.4}>
                         <Card sx={{ borderRadius: '10%', height: '100%' }}>
                             <CardActionArea sx={{ flexGrow: 1 }}>
                                 <Link
