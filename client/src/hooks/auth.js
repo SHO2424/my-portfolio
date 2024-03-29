@@ -6,11 +6,7 @@ import { useRouter } from 'next/router';
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter();
 
-    const {
-        data: user,
-        error,
-        mutate,
-    } = useSWR('/api/user', () =>
+    const { data: user, error, mutate } = useSWR('/api/user', () =>
         axios
             .get('/api/user')
             .then(res => res.data)

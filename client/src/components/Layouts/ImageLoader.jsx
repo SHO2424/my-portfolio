@@ -7,24 +7,24 @@ function ImageLoader({ src, sx }) {
     const [retryCount, setRetryCount] = useState(0);
     const maxRetry = 100; // リトライの最大回数
     useEffect(() => {
-      // 画像読み込みのための関数
-      const loadImage = () => {
-          setLoaded(false);
-          setError(false);
+        // 画像読み込みのための関数
+        const loadImage = () => {
+            setLoaded(false);
+            setError(false);
 
-          const image = new Image();
-          image.src = src;
-          image.onload = () => setLoaded(true);
-          image.onerror = () => {
-              if (retryCount < maxRetry) {
-                  setRetryCount(retryCount + 1);
-              } else {
-                  setError(true);
-              }
-          };
-      };
-      loadImage();
-  }, [src, retryCount]);
+            const image = new Image();
+            image.src = src;
+            image.onload = () => setLoaded(true);
+            image.onerror = () => {
+                if (retryCount < maxRetry) {
+                    setRetryCount(retryCount + 1);
+                } else {
+                    setError(true);
+                }
+            };
+        };
+        loadImage();
+    }, [src, retryCount]);
 
     if (error) {
         return <div>Error loading image.</div>;
@@ -45,8 +45,7 @@ function ImageLoader({ src, sx }) {
                         justifyContent: 'center',
                         alignItems: 'center',
                         height: '100%', // または必要な高さに応じて調整
-                    }}
-                >
+                    }}>
                     <CircularProgress />
                 </Box>
             )}
