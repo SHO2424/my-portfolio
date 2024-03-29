@@ -9,8 +9,7 @@ import {
     CardActionArea,
     Typography,
     CardContent,
-    Modal,
-    useTheme,
+    Modal
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import Layout from '@/components/Layouts/Card';
