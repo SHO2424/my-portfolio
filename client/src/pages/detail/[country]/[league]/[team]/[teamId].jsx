@@ -236,7 +236,8 @@ const TeamDetailPage = ({ detail }) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: '100vh',
-                }}>
+                }}
+            >
                 <CircularProgress /> {/* 読み込み中の表示 */}
             </div>
         );
@@ -254,7 +255,8 @@ const TeamDetailPage = ({ detail }) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         height: '100vh',
-                    }}>
+                    }}
+                >
                     <Typography sx={{ color: 'white' }}>
                         データが存在しません
                     </Typography>
@@ -269,7 +271,8 @@ const TeamDetailPage = ({ detail }) => {
             </Box>
             <Box
                 // onClick={handleOpen}
-                sx={{ marginTop: '20px' }}>
+                sx={{ marginTop: '20px' }}
+            >
                 <Grid
                     item
                     xs={10}
@@ -279,7 +282,8 @@ const TeamDetailPage = ({ detail }) => {
                         flexDirection: 'column',
                         justifyContent: 'center', // 水平方向の中心揃え
                         alignItems: 'center',
-                    }}>
+                    }}
+                >
                     <Box
                         component="img"
                         sx={{
@@ -297,7 +301,8 @@ const TeamDetailPage = ({ detail }) => {
                             marginTop: '20px',
                             marginBottom: '15px',
                         }}
-                        noWrap>
+                        noWrap
+                    >
                         {name}
                     </Typography>
                     <Rating
@@ -310,14 +315,16 @@ const TeamDetailPage = ({ detail }) => {
                     <Typography
                         sx={{ color: 'white', marginBottom: '20px' }}
                         variant="h6"
-                        component="h2">
+                        component="h2"
+                    >
                         {averageRating}
                     </Typography>
                     <Box sx={{ display: 'flex' }}>
                         <Button onClick={handleOpen}>チームを評価する</Button>
                         <Button
                             onClick={handleReviewsOpen}
-                            style={{ marginLeft: '10px' }}>
+                            style={{ marginLeft: '10px' }}
+                        >
                             コメントを見る
                         </Button>
                     </Box>
@@ -331,14 +338,16 @@ const TeamDetailPage = ({ detail }) => {
                     alignItems: 'stretch',
                     marginTop: '50px',
                     padding: '40px',
-                }}>
+                }}
+            >
                 {activeSquads.map(player => (
                     <Grid
                         item
                         key={player.id}
                         xs={4}
                         lg={1.5}
-                        onClick={() => handlePlayer(player)}>
+                        onClick={() => handlePlayer(player)}
+                    >
                         <Card sx={{ borderRadius: '3%', height: '100%' }}>
                             <CardActionArea sx={{ height: '100%' }}>
                                 <Box
@@ -348,7 +357,8 @@ const TeamDetailPage = ({ detail }) => {
                                         justifyContent: 'space-bewtween',
                                         flexDirection: 'column',
                                         alignItems: 'center',
-                                    }}>
+                                    }}
+                                >
                                     <ImageLoader
                                         src={player.photo}
                                         style={{
@@ -366,7 +376,8 @@ const TeamDetailPage = ({ detail }) => {
                                                 width: '100%',
                                                 textOverflow: 'ellipsis',
                                                 overflow: 'hidden',
-                                            }}>
+                                            }}
+                                        >
                                             {player.name}
                                         </Typography>
                                     </CardContent>
@@ -392,7 +403,8 @@ const TeamDetailPage = ({ detail }) => {
                         borderRadius: '10px',
                         boxShadow: 24,
                         p: 4,
-                    }}>
+                    }}
+                >
                     <Typography
                         // sx={{textAlign:"center"}}
                         variant="h6"
@@ -400,7 +412,8 @@ const TeamDetailPage = ({ detail }) => {
                         sx={{
                             textAlign: 'center',
                             fontSize: { xs: '15px', sm: '1.25rem' },
-                        }}>
+                        }}
+                    >
                         チームを評価する
                     </Typography>
                     <Box
@@ -409,7 +422,8 @@ const TeamDetailPage = ({ detail }) => {
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'space-around',
-                        }}>
+                        }}
+                    >
                         <Rating
                             required
                             onChange={handleRatingChange}
@@ -418,7 +432,7 @@ const TeamDetailPage = ({ detail }) => {
                         <TextareaAutosize
                             required
                             minRows={5}
-                            placeholder="レビュー内容"
+                            placeholder="コメント"
                             style={{
                                 width: '100%',
                                 marginTop: '10px',
@@ -435,7 +449,8 @@ const TeamDetailPage = ({ detail }) => {
                             }}
                             variant="outlined"
                             disabled={isReviewbuttonDisabled}
-                            onClick={handleReviewAdd}>
+                            onClick={handleReviewAdd}
+                        >
                             送信
                         </Button>
                     </Box>
@@ -455,7 +470,8 @@ const TeamDetailPage = ({ detail }) => {
                         borderRadius: '10px',
                         boxShadow: 24,
                         p: 4,
-                    }}>
+                    }}
+                >
                     {reviews.length > 0 ? (
                         <Swiper
                             mousewheel={{
@@ -495,7 +511,8 @@ const TeamDetailPage = ({ detail }) => {
                                                     <Typography
                                                         component={'div'}
                                                         variant="h6"
-                                                        gutterBottom>
+                                                        gutterBottom
+                                                    >
                                                         {review.user.name}
                                                     </Typography>
                                                     {editMode == review.id ? (
@@ -519,8 +536,7 @@ const TeamDetailPage = ({ detail }) => {
                                                                 }
                                                                 minRows={1}
                                                                 style={{
-                                                                    width:
-                                                                        '100%',
+                                                                    width: '100%',
                                                                 }}
                                                                 onChange={e => {
                                                                     setEditedContent(
@@ -546,7 +562,8 @@ const TeamDetailPage = ({ detail }) => {
                                                             <Typography
                                                                 variant="body2"
                                                                 color="textSecondary"
-                                                                paragraph>
+                                                                paragraph
+                                                            >
                                                                 {review.content}
                                                             </Typography>
                                                             {/* </Link> */}
@@ -560,7 +577,8 @@ const TeamDetailPage = ({ detail }) => {
                                                                 display: 'flex',
                                                                 justifyContent:
                                                                     'flex-end',
-                                                            }}>
+                                                            }}
+                                                        >
                                                             {editMode ===
                                                             review.id ? (
                                                                 <Button
@@ -572,7 +590,8 @@ const TeamDetailPage = ({ detail }) => {
                                                                         handleConfirmEdit(
                                                                             review.id,
                                                                         )
-                                                                    }>
+                                                                    }
+                                                                >
                                                                     編集確定
                                                                 </Button>
                                                             ) : (
@@ -582,7 +601,8 @@ const TeamDetailPage = ({ detail }) => {
                                                                             handleEdit(
                                                                                 review,
                                                                             )
-                                                                        }>
+                                                                        }
+                                                                    >
                                                                         編集
                                                                     </Button>
                                                                     <Button
@@ -591,7 +611,8 @@ const TeamDetailPage = ({ detail }) => {
                                                                             handleDelete(
                                                                                 review.id,
                                                                             )
-                                                                        }>
+                                                                        }
+                                                                    >
                                                                         削除
                                                                     </Button>
                                                                 </ButtonGroup>
@@ -609,7 +630,8 @@ const TeamDetailPage = ({ detail }) => {
                         <Typography
                             variant="h6"
                             color="textSecondary"
-                            align="center">
+                            align="center"
+                        >
                             コメントがありません
                         </Typography>
                     )}
@@ -628,7 +650,8 @@ const TeamDetailPage = ({ detail }) => {
                         borderRadius: '10px',
                         boxShadow: 24,
                         p: 4,
-                    }}>
+                    }}
+                >
                     <Box
                         sx={{
                             display: 'flex',
@@ -636,7 +659,8 @@ const TeamDetailPage = ({ detail }) => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             paddingTop: '35px',
-                        }}>
+                        }}
+                    >
                         <CardMedia
                             component={'img'}
                             sx={{
@@ -653,7 +677,8 @@ const TeamDetailPage = ({ detail }) => {
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 marginTop: '20px',
-                            }}>
+                            }}
+                        >
                             <Typography varient="h6" component={'div'} noWrap>
                                 name:&nbsp;{playerDetail.name}
                             </Typography>

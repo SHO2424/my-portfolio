@@ -1,12 +1,11 @@
-
-import React ,{ useState, useEffect } from 'react';
-import { CircularProgress,Box } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { CircularProgress, Box } from '@mui/material';
 
 function ImageLoader({ src, sx }) {
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(false);
     const [retryCount, setRetryCount] = useState(0);
-    const maxRetry = 100 ;
+    const maxRetry = 100; // リトライの最大回数
 
     useEffect(() => {
         // 画像読み込みのための関数
@@ -14,23 +13,22 @@ function ImageLoader({ src, sx }) {
             setLoaded(false);
             setError(false);
 
-      const image = new Image();
-      image.src = src;
-      image.onload = () => setLoaded(true);
-      image.onerror = () => {
-        if (retryCount < maxRetry) {
-          // console.log(`リトライ回数: ${retryCount + 1}`);
-          setRetryCount(retryCount + 1);
-        } else {
-          setError(true);
-
-        }
-
+            const image = new Image();
+            image.src = src;
+            image.onload = () => setLoaded(true);
+            image.onerror = () => {
+                if (retryCount < maxRetry) {
+                    setRetryCount(retryCount + 1);
+                } else {
+                    setError(true);
+                }
+            };
+        };
         loadImage();
     }, [src, retryCount]);
 
     if (error) {
-        return <div>Error loading image.</div>
+        return <div>Error loading image.</div>;
     }
 
     return (
@@ -48,12 +46,13 @@ function ImageLoader({ src, sx }) {
                         justifyContent: 'center',
                         alignItems: 'center',
                         height: '100%', // または必要な高さに応じて調整
-                    }}>
+                    }}
+                >
                     <CircularProgress />
                 </Box>
             )}
         </Box>
-    )
+    );
 }
 
-export default ImageLoader
+export default ImageLoader;

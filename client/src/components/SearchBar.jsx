@@ -28,7 +28,8 @@ const SearchBar = () => {
                 justifyContent: 'center',
                 flexDirection: { xs: 'column', md: 'row' },
                 // borderRadius:"10px"
-            }}>
+            }}
+        >
             <TextField
                 onChange={handleChange}
                 fullWidth
