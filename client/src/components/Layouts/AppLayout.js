@@ -1,8 +1,8 @@
-import Navigation from '@/components/Layouts/Navigation'
-import { useAuth } from '@/hooks/auth'
+import Navigation from '@/components/Layouts/Navigation';
+import { useAuth } from '@/hooks/auth';
 
-const AppLayout = ({ children,style }) => {
-    const { user } = useAuth({ middleware: 'auth' })
+const AppLayout = ({ children, style }) => {
+    const { user } = useAuth({ middleware: 'auth' });
 
     return (
         <div className="min-h-screen bg-gray-800" style={style}>
@@ -17,10 +17,10 @@ const AppLayout = ({ children,style }) => {
 
             {/* Page Content */}
             {/* <main> */}
-                {children}
-                {/* </main> */}
+            {children}
+            {/* </main> */}
         </div>
-    )
-}
+    );
+};
 
-export default AppLayout
+export default AppLayout;

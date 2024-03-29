@@ -1,5 +1,5 @@
-import AppLayout from '@/components/Layouts/AppLayout'
-import Head from 'next/head'
+import AppLayout from '@/components/Layouts/AppLayout';
+import Head from 'next/head';
 
 const Dashboard = () => {
     return (
@@ -8,7 +8,8 @@ const Dashboard = () => {
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
                     Dashboard
                 </h2>
-            }>
+            }
+        >
             <Head>
                 <title>Laravel - Dashboard</title>
             </Head>
@@ -23,7 +24,7 @@ const Dashboard = () => {
                 </div>
             </div>
         </AppLayout>
-    )
-}
+    );
+};
 
-export default Dashboard
+export default Dashboard;
