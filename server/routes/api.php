@@ -15,7 +15,7 @@ use App\Http\Controllers\ReviewController;
 |
 */
 // この変更はデプロイのトリガーとして使用されます。
-// この変更はデプロイのトリガーとして使用されます。
+
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
