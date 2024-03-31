@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import useSWR from 'swr';
 import laravelAxios from '@/lib/laravelAxios';
 import { useEffect } from 'react';
@@ -17,7 +18,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     );
 
-    // const csrf = () => laravelAxios.get('/sanctum/csrf-cookie');
+    const csrf = () => laravelAxios.get('/sanctum/csrf-cookie');
 
     const register = async ({ setErrors, ...props }) => {
         // await csrf();
