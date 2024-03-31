@@ -10,7 +10,7 @@ const laravelAxios = Axios.create({
 });
 
 // CSRFトークンを取得してセットする関数
-const fetchCsrfToken = async () => {
+export const fetchCsrfToken = async () => {
     await laravelAxios.get('/sanctum/csrf-cookie');
 };
 
