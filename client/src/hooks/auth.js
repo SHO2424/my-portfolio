@@ -26,7 +26,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
         setErrors([]);
 
-        axios
+        laravelAxios
             .post('/register', props)
             .then(() => mutate())
             .catch(error => {
