@@ -17,22 +17,28 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     );
 
-    const csrf = () => laravelAxios.get('/sanctum/csrf-cookie');
+    // const csrf = () => laravelAxios.get('/sanctum/csrf-cookie');
 
     const register = async ({ setErrors, ...props }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
-
-        laravelAxios
-            .post('/register', props)
-            .then(() => mutate())
-            .catch(error => {
-                if (error.response.status !== 422) throw error;
-
-                setErrors(error.response.data.errors);
+        laravelAxios.get('/sanctum/csrf-cookie').then(() => {
+            laravelAxios.post('/register', props).then(response => {
+                if (response.data.error) {
+                    console.log(response.data.error);
+                } else {
+                    console.log('success');
+                }
             });
+        });
     };
+    // .catch(error => {
+    //     if (error.response.status !== 422) throw error;
+
+    //     setErrors(error.response.data.errors);
+    // });
+    // };
 
     const login = async ({ setErrors, setStatus, ...props }) => {
         await csrf();
