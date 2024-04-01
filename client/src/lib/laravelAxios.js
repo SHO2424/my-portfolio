@@ -15,7 +15,7 @@ function getCsrfTokenFromCookies() {
 }
 
 const laravelAxios = Axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+    baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
     withCredentials: true, // クロスサイトのクッキーを送信するために必要
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
