@@ -1,7 +1,6 @@
-import laravelAxios from '@/lib/laravelAxios';
+import Axios from 'axios';
 
-
-const laravelAxios = laravelAxios.create({
+const laravelAxios = Axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
     withCredentials: true,
     headers: {
