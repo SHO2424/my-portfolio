@@ -9,7 +9,7 @@ function getCsrfTokenFromCookies() {
     const csrfTokenCookie = document.cookie
         .split('; ')
         .find(cookie => cookie.startsWith('XSRF-TOKEN='));
-        console.log(csrfTokenCookie);
+    console.log(csrfTokenCookie);
     return csrfTokenCookie
         ? decodeURIComponent(csrfTokenCookie.split('=')[1])
         : '';
