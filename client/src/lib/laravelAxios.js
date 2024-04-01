@@ -6,8 +6,12 @@ function getCsrfTokenFromCookies() {
         // サーバーサイドの実行時はクッキーを取得しない
         return '';
     }
-    const csrfTokenCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('XSRF-TOKEN='));
-    return csrfTokenCookie ? decodeURIComponent(csrfTokenCookie.split('=')[1]) : '';
+    const csrfTokenCookie = document.cookie
+        .split('; ')
+        .find(cookie => cookie.startsWith('XSRF-TOKEN='));
+    return csrfTokenCookie
+        ? decodeURIComponent(csrfTokenCookie.split('=')[1])
+        : '';
 }
 
 const laravelAxios = Axios.create({
@@ -15,7 +19,7 @@ const laravelAxios = Axios.create({
     withCredentials: true, // クロスサイトのクッキーを送信するために必要
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
-    }
+    },
 });
 
 // リクエストインターセプターを追加して、リクエストにCSRFトークンを添付
