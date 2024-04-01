@@ -1,31 +1,15 @@
 import Axios from 'axios';
 
-// CSRFトークンをクッキーから取得する関数
-function getCsrfTokenFromCookies() {
-    if (typeof document === 'undefined') {
-        // サーバーサイドの実行時はクッキーを取得しない
-        return '';
-    }
-    const csrfTokenCookie = document.cookie
-        .split('; ')
-        .find(cookie => cookie.startsWith('XSRF-TOKEN='));
-    console.log(csrfTokenCookie);
-    return csrfTokenCookie
-        ? decodeURIComponent(csrfTokenCookie.split('=')[1])
-        : '';
-}
-
 const laravelAxios = Axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-    withCredentials: true, // クロスサイトのクッキーを送信するために必要
+    withCredentials: true,
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
     },
 });
 
-// リクエストインターセプターを追加して、リクエストにCSRFトークンを添付
+// リクエストインターセプターを追加して、リクエストにCSRFトークンを動的に添付
 laravelAxios.interceptors.request.use(config => {
-    // CSRFトークンをヘッダーに設定
     const csrfToken = getCsrfTokenFromCookies();
     if (csrfToken) {
         config.headers['X-XSRF-TOKEN'] = csrfToken;
@@ -33,4 +17,15 @@ laravelAxios.interceptors.request.use(config => {
     return config;
 });
 
-export default laravelAxios;
+function getCsrfTokenFromCookies() {
+    // クライアントサイドでのみ実行されることを保証
+    if (typeof document === 'undefined') {
+        return '';
+    }
+    const csrfTokenCookie = document.cookie
+        .split('; ')
+        .find(cookie => cookie.startsWith('XSRF-TOKEN='));
+    return csrfTokenCookie
+        ? decodeURIComponent(csrfTokenCookie.split('=')[1])
+        : '';
+}
