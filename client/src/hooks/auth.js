@@ -22,7 +22,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         await laravelAxios.get('/sanctum/csrf-cookie');
     };
     const register = async ({ setErrors, ...props }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
 
