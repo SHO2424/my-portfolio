@@ -1,21 +1,5 @@
-import React, { useEffect } from 'react';
-import 'tailwindcss/tailwind.css';
-import laravelAxios from '@/lib/laravelAxios';
+import 'tailwindcss/tailwind.css'
 
-function App({ Component, pageProps }) {
-    useEffect(() => {
-        // CSRFトークンを取得する
-        const getCsrfToken = async () => {
-            await laravelAxios.get('/sanctum/csrf-cookie', {
-                withCredentials: true,
-            });
-            console.log('CSRFトークンを取得しました');
-        };
+const App = ({ Component, pageProps }) => <Component {...pageProps} />
 
-        getCsrfToken().catch(console.error);
-    }, []);
-
-    return <Component {...pageProps} />;
-}
-
-export default App;
+export default App
