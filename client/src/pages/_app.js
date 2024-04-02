@@ -7,7 +7,7 @@ function App({ Component, pageProps }) {
         // CSRFトークンを取得する
         const getCsrfToken = async () => {
             await laravelAxios.get(
-                `${process.env.NEXT_PUBLIC_API_BASE_URL}/sanctum/csrf-cookie`,
+                '/sanctum/csrf-cookie',
                 { withCredentials: true },
             );
             console.log('CSRFトークンを取得しました');
