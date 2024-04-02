@@ -3,16 +3,16 @@ import React, { useEffect } from 'react';
 import laravelAxios from '@/lib/laravelAxios';
 function App({ Component, pageProps }) {
     useEffect(() => {
-        // CSRFトークンを取得する
         const getCsrfToken = async () => {
-            await laravelAxios.get(
-                `${process.env.NEXT_PUBLIC_API_BASE_URL}/sanctum/csrf-cookie`,
-                { withCredentials: true },
-            );
-            console.log('CSRFトークンを取得しました');
+            try {
+                await laravelAxios.get('/sanctum/csrf-cookie');
+                console.log('CSRFトークンを取得しました');
+            } catch (error) {
+                console.error('CSRFトークンの取得に失敗しました', error);
+            }
         };
 
-        getCsrfToken().catch(console.error);
+        getCsrfToken();
     }, []);
 
     return <Component {...pageProps} />;
