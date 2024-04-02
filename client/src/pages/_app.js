@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
-import laravelAxios from '../lib/laravelAxios';
+import laravelAxios from '@/lib/laravelAxios';
 
 function App({ Component, pageProps }) {
     useEffect(() => {
