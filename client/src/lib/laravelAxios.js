@@ -26,8 +26,8 @@ laravelAxios.interceptors.request.use(config => {
     const csrfToken = getCsrfTokenFromCookies();
     if (csrfToken) {
         config.headers['X-XSRF-TOKEN'] = csrfToken;
-        console.log(csrfToken);
     }
+    console.log(csrfToken);
     return config;
 });
 
