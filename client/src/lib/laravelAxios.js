@@ -23,13 +23,13 @@ const laravelAxios = Axios.create({
 });
 
 // リクエストインターセプターを追加して、リクエストにCSRFトークンを動的に添付
-laravelAxios.interceptors.request.use(config => {
-    const csrfToken = getCsrfTokenFromCookies();
-    if (csrfToken) {
-        config.headers['X-XSRF-TOKEN'] = csrfToken;
-    }
-    console.log(csrfToken);
-    return config;
-});
+// laravelAxios.interceptors.request.use(config => {
+//     const csrfToken = getCsrfTokenFromCookies();
+//     if (csrfToken) {
+//         config.headers['X-XSRF-TOKEN'] = csrfToken;
+//     }
+//     console.log(csrfToken);
+//     return config;
+// });
 
 export default laravelAxios;
