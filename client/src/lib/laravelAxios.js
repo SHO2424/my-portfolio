@@ -13,6 +13,7 @@ function getCsrfTokenFromCookies() {
         ? decodeURIComponent(csrfTokenCookie.split('=')[1])
         : '';
 }
+const csrfToken = getCsrfTokenFromCookies();
 
 const laravelAxios = Axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -20,17 +21,18 @@ const laravelAxios = Axios.create({
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
         'Content-Type': 'application/json',
+        'X-XSRF-TOKEN': csrfToken,
     },
 });
 
 // リクエストインターセプターを追加して、リクエストにCSRFトークンを動的に添付
-laravelAxios.interceptors.request.use(config => {
-    const csrfToken = getCsrfTokenFromCookies();
-    if (csrfToken) {
-        config.headers['X-XSRF-TOKEN'] = csrfToken;
-    }
-    console.log(csrfToken);
-    return config;
-});
+// laravelAxios.interceptors.request.use(config => {
+//     const csrfToken = getCsrfTokenFromCookies();
+//     if (csrfToken) {
+//         config.headers['X-XSRF-TOKEN'] = csrfToken;
+//     }
+//     console.log(csrfToken);
+//     return config;
+// });
 
 export default laravelAxios;
