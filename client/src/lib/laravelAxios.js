@@ -1,18 +1,18 @@
 import Axios from 'axios';
 
-function getCsrfTokenFromCookies() {
-    // クライアントサイドでのみ実行されることを保証
-    if (typeof document === 'undefined') {
-        return '';
-    }
-    const csrfTokenCookie = document.cookie
-        .split('; ')
-        .find(cookie => cookie.startsWith('XSRF-TOKEN='));
-    console.log(csrfTokenCookie);
-    return csrfTokenCookie
-        ? decodeURIComponent(csrfTokenCookie.split('=')[1])
-        : '';
-}
+// function getCsrfTokenFromCookies() {
+//     // クライアントサイドでのみ実行されることを保証
+//     if (typeof document === 'undefined') {
+//         return '';
+//     }
+//     const csrfTokenCookie = document.cookie
+//         .split('; ')
+//         .find(cookie => cookie.startsWith('XSRF-TOKEN='));
+//     console.log(csrfTokenCookie);
+//     return csrfTokenCookie
+//         ? decodeURIComponent(csrfTokenCookie.split('=')[1])
+//         : '';
+// }
 
 const laravelAxios = Axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
