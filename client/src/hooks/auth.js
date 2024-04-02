@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import useSWR from 'swr';
-import laravelAxios from '@/lib/laravelAxios';
+import axios from '@/lib/laravelAxios';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -8,7 +8,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter();
 
     const { data: user, error, mutate } = useSWR('/api/user', () =>
-        laravelAxios
+        axios
             .get('/api/user')
             .then(res => res.data)
             .catch(error => {
@@ -19,14 +19,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     );
 
     const csrf = async () => {
-        await laravelAxios.get('/sanctum/csrf-cookie');
+        await axios.get('/sanctum/csrf-cookie');
     };
     const register = async ({ setErrors, ...props }) => {
         await csrf();
 
         setErrors([]);
 
-        laravelAxios
+        axios
             .post('/register', props)
             .then(() => mutate())
             .catch(error => {
@@ -42,7 +42,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors([]);
         setStatus(null);
 
-        laravelAxios
+        axios
             .post('/login', props)
             .then(() => mutate())
             .catch(error => {
@@ -58,7 +58,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors([]);
         setStatus(null);
 
-        laravelAxios
+        axios
             .post('/forgot-password', { email })
             .then(response => setStatus(response.data.status))
             .catch(error => {
@@ -74,7 +74,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors([]);
         setStatus(null);
 
-        laravelAxios
+        axios
             .post('/reset-password', { token: router.query.token, ...props })
             .then(response =>
                 router.push('/login?reset=' + btoa(response.data.status)),
@@ -87,14 +87,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     };
 
     const resendEmailVerification = ({ setStatus }) => {
-        laravelAxios
+        axios
             .post('/email/verification-notification')
             .then(response => setStatus(response.data.status));
     };
 
     const logout = async () => {
         if (!error) {
-            await laravelAxios.post('/logout').then(() => mutate());
+            await axios.post('/logout').then(() => mutate());
         }
 
         window.location.pathname = '/login';
