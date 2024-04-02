@@ -29,3 +29,5 @@ laravelAxios.interceptors.request.use(config => {
     }
     return config;
 });
+
+export default laravelAxios;
