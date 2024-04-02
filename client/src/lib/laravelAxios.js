@@ -21,8 +21,9 @@ const laravelAxios = axios.create({
 
 // リクエストが送信される直前に実行されるインターセプターを追加
 laravelAxios.interceptors.request.use(config => {
+    const token = getCsrfTokenFromCookies();
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
-    config.headers['X-XSRF-TOKEN'] = getCsrfToken(); // トークンを動的にヘッダーに添付
+    config.headers['X-XSRF-TOKEN'] = token; // トークンを動的にヘッダーに添付
     return config;
 });
 
