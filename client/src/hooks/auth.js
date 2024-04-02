@@ -18,9 +18,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     );
 
-    const csrf = async () => {
-        await laravelAxios.get('/sanctum/csrf-cookie');
-    };
+    // const csrf = async () => {
+    //     await laravelAxios.get('/sanctum/csrf-cookie');
+    // };
     const register = async ({ setErrors, ...props }) => {
         // await csrf();
 
@@ -37,7 +37,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     };
 
     const login = async ({ setErrors, setStatus, ...props }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
         setStatus(null);
@@ -53,7 +53,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     };
 
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
         setStatus(null);
@@ -69,7 +69,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     };
 
     const resetPassword = async ({ setErrors, setStatus, ...props }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
         setStatus(null);
