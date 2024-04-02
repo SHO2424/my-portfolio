@@ -6,7 +6,7 @@ function App({ Component, pageProps }) {
         const getCsrfToken = async () => {
             try {
                 const response = await laravelAxios.get('/sanctum/csrf-cookie');
-                console.lpog(response.data);
+                console.log(response.data);
                 console.log('CSRFトークンを取得しました');
             } catch (error) {
                 console.error('CSRFトークンの取得に失敗しました', error);
