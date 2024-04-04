@@ -18,11 +18,11 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     );
 
-    const csrf = async () => {
-        await axios.get('/sanctum/csrf-cookie');
-    };
+    // const csrf = async () => {
+    //     await axios.get('/sanctum/csrf-cookie');
+    // };
     const register = async ({ setErrors, ...props }) => {
-        await csrf();
+        // await csrf();
 
         setErrors([]);
 
