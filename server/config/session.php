@@ -196,8 +196,8 @@ return [
     |
     */
 
-    'same_site' => 'none',
-
+    // 'same_site' => 'None',
+    'same_site' => env('SESSION_SAME_SITE'),
     /*
     |--------------------------------------------------------------------------
     | Partitioned Cookies
