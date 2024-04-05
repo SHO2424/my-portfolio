@@ -39,10 +39,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            \App\Http\Middleware\EncryptCookies::class,// 編集
-            \Illuminate\Session\Middleware\StartSession::class,// 編集
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,// 編集
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,// 編集
+ 
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
