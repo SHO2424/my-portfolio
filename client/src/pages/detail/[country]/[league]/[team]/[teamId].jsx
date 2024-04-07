@@ -449,12 +449,12 @@ const TeamDetailPage = ({ detail }) => {
                         left: '50%',
                         transform: 'translate(-50%,-50%)',
                         // height:"60%",
-                        width: { xs: '50%', sm: '60%' },
+                        width: '70%',
                         bgcolor: 'background.paper',
                         // border: "2px solid #000",
                         borderRadius: '10px',
                         boxShadow: 24,
-                        p: 4,
+                        p: 2,
                     }}>
                     {reviews.length > 0 ? (
                         <Swiper
