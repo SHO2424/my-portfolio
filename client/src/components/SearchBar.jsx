@@ -30,9 +30,8 @@ const SearchBar = () => {
                 // borderRadius:"10px"
             }}>
             <TextField
-            id="filled-basic"
-                label="検索する"  
-                
+                id="filled-basic"
+                label="検索する"
                 onChange={handleChange}
                 fullWidth
                 // placeholder="検索する"
