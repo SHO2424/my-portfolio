@@ -146,22 +146,32 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 display: 'flex',
                                                 width: {
                                                     xs: '40px',
+                                                    sm: '50px',
                                                     md: '60px',
                                                 },
                                                 height: {
                                                     xs: '40px',
+                                                    sm: '50px',
                                                     md: '60px',
                                                 },
                                                 textAlign: 'center',
                                             }}
                                         />
 
-                                        <CardContent sx={{ width: '100%' }}>
+                                        <CardContent
+                                            sx={{
+                                                padding: 0, // パディングをなくす
+                                                width: '100%',
+                                                '&:last-child': {
+                                                    paddingBottom: 0, // CardContentの下部のパディングをなくす
+                                                },
+                                            }}>
                                             <Typography
                                                 varient="h6"
                                                 component={'div'}
                                                 noWrap
                                                 sx={{
+                                                    padding: '5px 10px',
                                                     textAlign: 'center',
                                                     width: '100%',
                                                     textOverflow: 'ellipsis',
