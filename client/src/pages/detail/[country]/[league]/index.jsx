@@ -209,7 +209,7 @@ const PremiDetailPage = ({ detail, league }) => {
                         boxShadow: 24,
                         p: 4,
                         width: { xs: '85%', sm: '80%', md: '70%' },
-                        height: { xs: '50%', sm: '80%', md: '70%' },
+                        height: { xs: '70%', sm: '90%', md: '90%' },
                         overflowY: 'auto',
                     }}>
                     {loading ? (
@@ -327,14 +327,13 @@ const PremiDetailPage = ({ detail, league }) => {
                             </Box>
                             <Swiper
                                 mousewheel={{
-                                    sensitivity: 10,
+                                    sensitivity: 5,
                                     releaseOnEdges: true,
                                 }}
                                 direction={'vertical'}
                                 modules={[
-                                    Navigation,
-                                    Pagination,
-                                    Scrollbar,
+    
+                            
                                     A11y,
                                     Mousewheel,
                                 ]}
@@ -345,7 +344,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                     cursor: 'pointer',
                                 }}
                                 //  scrollbar={{ draggable: "true" }}
-                                spaceBetween={10}
+                                spaceBetween={5}
                                 slidesPerView={15}
                                 //  breakpoints={{
                                 //   320: {

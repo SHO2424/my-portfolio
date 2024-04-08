@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AppLayout from '@/components/Layouts/AppLayout';
@@ -46,6 +46,7 @@ const TeamDetailPage = ({ detail }) => {
     const [playerDetail, setPlayerDetail] = useState({});
     const [selectedPlayerId, setSelectedPlayerId] = useState(null);
     const [averageRating, setAverageRating] = useState(null);
+    const [editing, setEditing] = useState(false);
     const [editMode, setEditMode] = useState(null);
     const [editedRating, setEditedRating] = useState(null);
     const [editedContent, setEditedContent] = useState('');
@@ -58,6 +59,7 @@ const TeamDetailPage = ({ detail }) => {
     const { id } = router.query; // クエリパラメータからuserIdを取得
     const { country } = router.query;
     const { league } = router.query;
+    const maxLength="30";
     console.log(country);
     console.log(league);
     console.log({ id });
@@ -119,6 +121,8 @@ const TeamDetailPage = ({ detail }) => {
         console.log(rating);
     };
     const handleEdit = review => {
+        setEditing(true);
+        console.log("editing")
         setEditMode(review.id);
         setEditedRating(review.rating);
         setEditedContent(review.content);
@@ -164,6 +168,7 @@ const TeamDetailPage = ({ detail }) => {
             setReviews(updatedReviews);
             updateAverageRating(updatedReviews);
             setEditMode(null);
+            setEditing(false)
         } catch (err) {
             console.log(err);
         }
@@ -227,6 +232,7 @@ const TeamDetailPage = ({ detail }) => {
             }
         }
     };
+
 
     if (loading) {
         return (
@@ -416,14 +422,14 @@ const TeamDetailPage = ({ detail }) => {
                             sx={{ margin: 'auto', paddingBottom: '20px' }}
                         />
                         <TextareaAutosize
-                            required
-                            minRows={5}
-                            placeholder="コメント"
+                            minRows={2}
+                            maxLength={maxLength}
                             style={{
                                 width: '100%',
                                 marginTop: '10px',
                                 marginBottom: '10px',
                             }}
+                            placeholder="Maximum 20 characters"
                             onChange={handleReviewChange}
                             value={review}
                         />
@@ -481,15 +487,16 @@ const TeamDetailPage = ({ detail }) => {
                             slidesPerView={3}
                             //  breakpoints={{
                             //   320: {
-                            //     slidesPerView: 15,
-                            //     spaceBetween: 10,
-                            //   }
-                            // }}
-                        >
+                                //     slidesPerView: 15,
+                                //     spaceBetween: 10,
+                                //   }
+                                // }}
+                                >
                             <Grid container spacing={3}>
                                 {reviews.map(review => (
                                     <SwiperSlide key={review.id}>
                                         <Grid item xs={12} key={review.id}>
+
                                             <Card>
                                                 <CardContent>
                                                     <Typography
@@ -500,6 +507,7 @@ const TeamDetailPage = ({ detail }) => {
                                                     </Typography>
                                                     {editMode == review.id ? (
                                                         <>
+                                                        <Box sx={{display:"flex" ,justifyContent:"space-between"}}>
                                                             <Rating
                                                                 value={
                                                                     editedRating
@@ -513,10 +521,25 @@ const TeamDetailPage = ({ detail }) => {
                                                                     );
                                                                 }}
                                                             />
-                                                            <TextareaAutosize
+                                                               <div>
+                                                                {editedContent.length >= maxLength ? (
+                                                                // 文字数が maxLength に達した場合
+                                                                <span>maxLength: {maxLength}</span>
+                                                                ) : (
+                                                                // それ以外の場合、現在の文字数と maxLength を表示
+                                                                <span>
+                                                                    {editedContent.length} / {maxLength}
+                                                                </span>
+                                                                )}
+                                                            </div>
+
+                                                        </Box>
+                                                            <div>
+                                                            <textarea
                                                                 value={
                                                                     editedContent
                                                                 }
+                                                                maxLength={maxLength}
                                                                 minRows={1}
                                                                 style={{
                                                                     width:
@@ -529,6 +552,19 @@ const TeamDetailPage = ({ detail }) => {
                                                                     );
                                                                 }}
                                                             />
+                                                               {/* <div>
+                                                                {editedContent.length >= maxLength ? (
+                                                                // 文字数が maxLength に達した場合
+                                                                <span>maxLength: {maxLength}</span>
+                                                                ) : (
+                                                                // それ以外の場合、現在の文字数と maxLength を表示
+                                                                <span>
+                                                                    {editedContent.length} / {maxLength}
+                                                                </span>
+                                                                )}
+                                                            </div> */}
+
+                                                            </div>
                                                         </>
                                                     ) : (
                                                         <>
@@ -539,14 +575,18 @@ const TeamDetailPage = ({ detail }) => {
                                                                 readOnly
                                                                 sx={{
                                                                     marginBottom:
-                                                                        '10px',
+                                                                        '6px',
                                                                 }}
                                                             />
                                                             {/* <Link href={`/detail/${media_type}/${media_id}/review/${review.id}`}> */}
                                                             <Typography
                                                                 variant="body2"
                                                                 color="textSecondary"
-                                                                paragraph>
+                                                                paragraph
+                                                                sx={{
+                                                                    marginBottom:
+                                                                        '6px',
+                                                                }}>
                                                                 {review.content}
                                                             </Typography>
                                                             {/* </Link> */}
@@ -602,7 +642,9 @@ const TeamDetailPage = ({ detail }) => {
                                             </Card>
                                         </Grid>
                                     </SwiperSlide>
-                                ))}
+                                    
+                                )
+                                )}
                             </Grid>
                         </Swiper>
                     ) : (
@@ -613,6 +655,8 @@ const TeamDetailPage = ({ detail }) => {
                             コメントがありません
                         </Typography>
                     )}
+                    
+                    
                 </Box>
             </Modal>
             <Modal open={detailOpen} onClose={detailHandleClose}>
