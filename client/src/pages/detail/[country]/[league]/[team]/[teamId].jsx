@@ -555,7 +555,7 @@ const TeamDetailPage = ({ detail }) => {
                                                                     maxLength={
                                                                         maxLength
                                                                     }
-                                                                    minRows={1}
+                                                                    // minRows={1}
                                                                     style={{
                                                                         width:
                                                                             '100%',
