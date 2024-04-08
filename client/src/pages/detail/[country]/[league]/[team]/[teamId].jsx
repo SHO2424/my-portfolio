@@ -59,7 +59,7 @@ const TeamDetailPage = ({ detail }) => {
     const { id } = router.query; // クエリパラメータからuserIdを取得
     const { country } = router.query;
     const { league } = router.query;
-    const maxLength = '30';
+    const maxLength = '20';
     console.log(country);
     console.log(league);
     console.log({ id });

@@ -334,7 +334,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                 }}
                                 //  scrollbar={{ draggable: "true" }}
                                 spaceBetween={5}
-                                slidesPerView={15}
+                                slidesPerView={20}
                                 //  breakpoints={{
                                 //   320: {
                                 //     slidesPerView: 15,
