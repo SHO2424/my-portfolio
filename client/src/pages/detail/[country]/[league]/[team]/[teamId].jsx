@@ -446,7 +446,7 @@ const TeamDetailPage = ({ detail }) => {
                         boxShadow: 24,
                         p: 2,
                         width: { xs: '85%', sm: '80%', md: '70%' },
-                        height: { xs: '70%', sm: '90%', md: '90%' },
+                        height: { xs: '80%', sm: '90%', md: '90%' },
                         overflowY: 'auto',
                     }}>
                     {reviews.length > 0 ? (
