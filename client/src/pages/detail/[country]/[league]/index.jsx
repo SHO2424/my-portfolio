@@ -30,7 +30,6 @@ import 'swiper/css/mousewheel';
 const PremiDetailPage = ({ detail, league }) => {
     const router = useRouter();
     const { country } = router.query;
-    console.log(league);
     const countryLogos = {
         England: {
             logo: '/Premier_logo.png',
@@ -55,7 +54,6 @@ const PremiDetailPage = ({ detail, league }) => {
     };
     const leagueImg = countryLogos[country].logo;
     const leagueName = countryLogos[country].name;
-    console.log(detail);
     // ページコンポーネントの内容
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false);
@@ -86,7 +84,6 @@ const PremiDetailPage = ({ detail, league }) => {
             const featchData = response.data.response;
             // console.log(featchData[0].league);
             const standingsData = featchData[0].league.standings[0];
-            console.log(standingsData);
             setLeagueStandings(standingsData);
         } catch {
             return { notFound: true };
@@ -215,8 +212,7 @@ const PremiDetailPage = ({ detail, league }) => {
                         // データがロードされた後の表示
                         <>
                             <Box sx={{ padding: '10px' }}>
-                                <Grid
-                                    container
+                                <container
                                     spacing={{ md: 3 }}
                                     sx={{
                                         display: 'flex',
@@ -233,12 +229,13 @@ const PremiDetailPage = ({ detail, league }) => {
                                             順位
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={1}></Grid>
+                                    <Grid item xs={1} />
                                     <Grid item xs={3}>
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap></Typography>
+                                            noWrap
+                                        />
                                     </Grid>
                                     <Grid
                                         item
@@ -333,9 +330,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                     cursor: 'pointer',
                                 }}
                                 spaceBetween={5}
-                                slidesPerView={20}
-                               
-                            >
+                                slidesPerView={20}>
                                 {leagueStandings.map(data => (
                                     <SwiperSlide key={data.rank}>
                                         <Grid
