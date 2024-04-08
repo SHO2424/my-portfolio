@@ -376,12 +376,12 @@ const TeamDetailPage = ({ detail }) => {
                         left: '50%',
                         transform: 'translate(-50%,-50%)',
                         // height:"60%",
-                        width: { xs: '50%', sm: '40%' },
+                        width: { xs: '85%', sm: '60%', md: '50%' },
                         bgcolor: 'background.paper',
                         // border: "2px solid #000",
                         borderRadius: '10px',
                         boxShadow: 24,
-                        p: 4,
+                        padding: '32px 40px',
                     }}>
                     <Typography
                         // sx={{textAlign:"center"}}
@@ -411,12 +411,23 @@ const TeamDetailPage = ({ detail }) => {
                             style={{
                                 width: '100%',
                                 marginTop: '10px',
-                                marginBottom: '10px',
+                                marginBottom: '20px',
                             }}
                             placeholder="Maximum 20 characters"
                             onChange={handleReviewChange}
                             value={review}
                         />
+                        <Box sx={{ marginBottom: '20px' }}>
+                            {review.length >= maxLength ? (
+                                // 文字数が maxLength に達した場合
+                                <span>maxLength: {maxLength}</span>
+                            ) : (
+                                // それ以外の場合、現在の文字数と maxLength を表示
+                                <span>
+                                    {review.length} / {maxLength}
+                                </span>
+                            )}
+                        </Box>
                         <Button
                             style={{
                                 display: 'block',
@@ -450,35 +461,6 @@ const TeamDetailPage = ({ detail }) => {
                         overflowY: 'auto',
                     }}>
                     {reviews.length > 0 ? (
-                        // <Swiper
-                        //     mousewheel={{
-                        //         sensitivity: 10,
-                        //         releaseOnEdges: true,
-                        //     }}
-                        //     direction={'vertical'}
-                        //     modules={[
-                        //         Navigation,
-                        //         Pagination,
-                        //         Scrollbar,
-                        //         A11y,
-                        //         Mousewheel,
-                        //     ]}
-                        //     style={{
-                        //         marginTop: '20px',
-                        //         padding: '15px',
-                        //         height: '80vh',
-                        //         cursor: 'pointer',
-                        //     }}
-                        //     //  scrollbar={{ draggable: "true" }}
-                        //     spaceBetween={5}
-                        //     slidesPerView={3}
-                        //     //  breakpoints={{
-                        //     //   320: {
-                        //     //     slidesPerView: 15,
-                        //     //     spaceBetween: 10,
-                        //     //   }
-                        //     // }}
-                        // >
                         reviews.map(review => (
                             <Grid
                                 container
@@ -552,17 +534,6 @@ const TeamDetailPage = ({ detail }) => {
                                                                 );
                                                             }}
                                                         />
-                                                        {/* <div>
-                                                                {editedContent.length >= maxLength ? (
-                                                                // 文字数が maxLength に達した場合
-                                                                <span>maxLength: {maxLength}</span>
-                                                                ) : (
-                                                                // それ以外の場合、現在の文字数と maxLength を表示
-                                                                <span>
-                                                                    {editedContent.length} / {maxLength}
-                                                                </span>
-                                                                )}
-                                                            </div> */}
                                                     </div>
                                                 </>
                                             ) : (
@@ -574,7 +545,7 @@ const TeamDetailPage = ({ detail }) => {
                                                             marginBottom: '6px',
                                                         }}
                                                     />
-                                                    {/* <Link href={`/detail/${media_type}/${media_id}/review/${review.id}`}> */}
+
                                                     <Typography
                                                         variant="body2"
                                                         color="textSecondary"
@@ -584,7 +555,6 @@ const TeamDetailPage = ({ detail }) => {
                                                         }}>
                                                         {review.content}
                                                     </Typography>
-                                                    {/* </Link> */}
                                                 </>
                                             )}
 
