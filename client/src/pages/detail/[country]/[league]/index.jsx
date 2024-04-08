@@ -212,7 +212,7 @@ const PremiDetailPage = ({ detail, league }) => {
                         // データがロードされた後の表示
                         <>
                             <Box sx={{ padding: '10px' }}>
-                                <container
+                                <Grid container
                                     spacing={{ md: 3 }}
                                     sx={{
                                         display: 'flex',
