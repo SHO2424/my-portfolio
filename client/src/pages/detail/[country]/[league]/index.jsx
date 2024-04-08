@@ -17,15 +17,8 @@ import Button from '@/components/Button';
 import { CircularProgress } from '@mui/material';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import BackButton from '@/components/Layouts/backButton';
-import { A11y, Mousewheel } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/mousewheel';
 
 const PremiDetailPage = ({ detail, league }) => {
     const router = useRouter();
@@ -336,6 +329,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                 // <SwiperSlide key={data.rank} >
                                 <Grid
                                     container
+                                    key={data.rank}
                                     spacing={{ md: 3 }}
                                     sx={{
                                         display: 'flex',

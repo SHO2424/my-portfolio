@@ -21,19 +21,6 @@ import { useRouter } from 'next/router';
 import Button from '@/components/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useAuth } from '@/hooks/auth';
-import {
-    Navigation,
-    Pagination,
-    Scrollbar,
-    A11y,
-    Mousewheel,
-} from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/mousewheel';
 
 const TeamDetailPage = ({ detail }) => {
     const [activeSquads, setActiveSquads] = useState([]);
@@ -452,7 +439,7 @@ const TeamDetailPage = ({ detail }) => {
                         left: '50%',
                         transform: 'translate(-50%,-50%)',
                         // height:"60%",
-                        width: '70%',
+                        // width: '70%',
                         bgcolor: 'background.paper',
                         // border: "2px solid #000",
                         borderRadius: '10px',
@@ -496,8 +483,9 @@ const TeamDetailPage = ({ detail }) => {
                             <Grid
                                 container
                                 spacing={3}
-                                style={{ marginBottom: '10px' }}>
-                                <Grid item xs={12} key={review.id}>
+                                style={{ marginBottom: '10px' }}
+                                key={review.id}>
+                                <Grid item xs={12}>
                                     <Card>
                                         <CardContent>
                                             <Typography
