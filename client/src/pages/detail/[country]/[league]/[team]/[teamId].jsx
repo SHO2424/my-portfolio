@@ -121,7 +121,6 @@ const TeamDetailPage = ({ detail }) => {
         console.log(rating);
     };
     const handleEdit = review => {
-        setEditing(true);
         console.log('editing');
         setEditMode(review.id);
         setEditedRating(review.rating);
@@ -168,7 +167,6 @@ const TeamDetailPage = ({ detail }) => {
             setReviews(updatedReviews);
             updateAverageRating(updatedReviews);
             setEditMode(null);
-            setEditing(false);
         } catch (err) {
             console.log(err);
         }
@@ -421,7 +419,7 @@ const TeamDetailPage = ({ detail }) => {
                             sx={{ margin: 'auto', paddingBottom: '20px' }}
                         />
                         <TextareaAutosize
-                            minRows={2}
+                            // minRows={2}
                             maxLength={maxLength}
                             style={{
                                 width: '100%',

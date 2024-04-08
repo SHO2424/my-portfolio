@@ -17,13 +17,7 @@ import Button from '@/components/Button';
 import { CircularProgress } from '@mui/material';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import BackButton from '@/components/Layouts/backButton';
-import {
-    Navigation,
-    Pagination,
-    Scrollbar,
-    A11y,
-    Mousewheel,
-} from 'swiper/modules';
+import { A11y, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
