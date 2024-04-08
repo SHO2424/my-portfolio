@@ -59,7 +59,7 @@ const TeamDetailPage = ({ detail }) => {
     const { id } = router.query; // クエリパラメータからuserIdを取得
     const { country } = router.query;
     const { league } = router.query;
-    const maxLength = '20';
+    const maxLength = '30';
     console.log(country);
     console.log(league);
     console.log({ id });
@@ -458,117 +458,113 @@ const TeamDetailPage = ({ detail }) => {
                         borderRadius: '10px',
                         boxShadow: 24,
                         p: 2,
+                        width: { xs: '85%', sm: '80%', md: '70%' },
+                        height: { xs: '70%', sm: '90%', md: '90%' },
+                        overflowY: 'auto',
                     }}>
                     {reviews.length > 0 ? (
-                        <Swiper
-                            mousewheel={{
-                                sensitivity: 10,
-                                releaseOnEdges: true,
-                            }}
-                            direction={'vertical'}
-                            modules={[
-                                Navigation,
-                                Pagination,
-                                Scrollbar,
-                                A11y,
-                                Mousewheel,
-                            ]}
-                            style={{
-                                marginTop: '20px',
-                                padding: '15px',
-                                height: '80vh',
-                                cursor: 'pointer',
-                            }}
-                            //  scrollbar={{ draggable: "true" }}
-                            spaceBetween={5}
-                            slidesPerView={3}
-                            //  breakpoints={{
-                            //   320: {
-                            //     slidesPerView: 15,
-                            //     spaceBetween: 10,
-                            //   }
-                            // }}
-                        >
-                            <Grid container spacing={3}>
-                                {reviews.map(review => (
-                                    <SwiperSlide key={review.id}>
-                                        <Grid item xs={12} key={review.id}>
-                                            <Card>
-                                                <CardContent>
-                                                    <Typography
-                                                        component={'div'}
-                                                        variant="h6"
-                                                        gutterBottom>
-                                                        {review.user.name}
-                                                    </Typography>
-                                                    {editMode == review.id ? (
-                                                        <>
-                                                            <Box
-                                                                sx={{
-                                                                    display:
-                                                                        'flex',
-                                                                    justifyContent:
-                                                                        'space-between',
-                                                                }}>
-                                                                <Rating
-                                                                    value={
-                                                                        editedRating
-                                                                    }
-                                                                    onChange={(
-                                                                        e,
-                                                                        newValue,
-                                                                    ) => {
-                                                                        setEditedRating(
-                                                                            newValue,
-                                                                        );
-                                                                    }}
-                                                                />
-                                                                <div>
-                                                                    {editedContent.length >=
-                                                                    maxLength ? (
-                                                                        // 文字数が maxLength に達した場合
-                                                                        <span>
-                                                                            maxLength:{' '}
-                                                                            {
-                                                                                maxLength
-                                                                            }
-                                                                        </span>
-                                                                    ) : (
-                                                                        // それ以外の場合、現在の文字数と maxLength を表示
-                                                                        <span>
-                                                                            {
-                                                                                editedContent.length
-                                                                            }{' '}
-                                                                            /{' '}
-                                                                            {
-                                                                                maxLength
-                                                                            }
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-                                                            </Box>
-                                                            <div>
-                                                                <textarea
-                                                                    value={
-                                                                        editedContent
-                                                                    }
-                                                                    maxLength={
-                                                                        maxLength
-                                                                    }
-                                                                    // minRows={1}
-                                                                    style={{
-                                                                        width:
-                                                                            '100%',
-                                                                    }}
-                                                                    onChange={e => {
-                                                                        setEditedContent(
-                                                                            e
-                                                                                .target
-                                                                                .value,
-                                                                        );
-                                                                    }}
-                                                                />
-                                                                {/* <div>
+                        // <Swiper
+                        //     mousewheel={{
+                        //         sensitivity: 10,
+                        //         releaseOnEdges: true,
+                        //     }}
+                        //     direction={'vertical'}
+                        //     modules={[
+                        //         Navigation,
+                        //         Pagination,
+                        //         Scrollbar,
+                        //         A11y,
+                        //         Mousewheel,
+                        //     ]}
+                        //     style={{
+                        //         marginTop: '20px',
+                        //         padding: '15px',
+                        //         height: '80vh',
+                        //         cursor: 'pointer',
+                        //     }}
+                        //     //  scrollbar={{ draggable: "true" }}
+                        //     spaceBetween={5}
+                        //     slidesPerView={3}
+                        //     //  breakpoints={{
+                        //     //   320: {
+                        //     //     slidesPerView: 15,
+                        //     //     spaceBetween: 10,
+                        //     //   }
+                        //     // }}
+                        // >
+                        reviews.map(review => (
+                            <Grid
+                                container
+                                spacing={3}
+                                style={{ marginBottom: '10px' }}>
+                                <Grid item xs={12} key={review.id}>
+                                    <Card>
+                                        <CardContent>
+                                            <Typography
+                                                component={'div'}
+                                                variant="h6"
+                                                gutterBottom>
+                                                {review.user.name}
+                                            </Typography>
+                                            {editMode == review.id ? (
+                                                <>
+                                                    <Box
+                                                        sx={{
+                                                            display: 'flex',
+                                                            justifyContent:
+                                                                'space-between',
+                                                        }}>
+                                                        <Rating
+                                                            value={editedRating}
+                                                            onChange={(
+                                                                e,
+                                                                newValue,
+                                                            ) => {
+                                                                setEditedRating(
+                                                                    newValue,
+                                                                );
+                                                            }}
+                                                        />
+                                                        <div>
+                                                            {editedContent.length >=
+                                                            maxLength ? (
+                                                                // 文字数が maxLength に達した場合
+                                                                <span>
+                                                                    maxLength:{' '}
+                                                                    {maxLength}
+                                                                </span>
+                                                            ) : (
+                                                                // それ以外の場合、現在の文字数と maxLength を表示
+                                                                <span>
+                                                                    {
+                                                                        editedContent.length
+                                                                    }{' '}
+                                                                    /{' '}
+                                                                    {maxLength}
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    </Box>
+                                                    <div>
+                                                        <textarea
+                                                            value={
+                                                                editedContent
+                                                            }
+                                                            maxLength={
+                                                                maxLength
+                                                            }
+                                                            // minRows={1}
+                                                            style={{
+                                                                width: '100%',
+                                                            }}
+                                                            onChange={e => {
+                                                                setEditedContent(
+                                                                    e.target
+                                                                        .value,
+                                                                );
+                                                            }}
+                                                        />
+                                                        {/* <div>
                                                                 {editedContent.length >= maxLength ? (
                                                                 // 文字数が maxLength に達した場合
                                                                 <span>maxLength: {maxLength}</span>
@@ -579,87 +575,79 @@ const TeamDetailPage = ({ detail }) => {
                                                                 </span>
                                                                 )}
                                                             </div> */}
-                                                            </div>
-                                                        </>
-                                                    ) : (
-                                                        <>
-                                                            <Rating
-                                                                value={
-                                                                    review.rating
-                                                                }
-                                                                readOnly
-                                                                sx={{
-                                                                    marginBottom:
-                                                                        '6px',
-                                                                }}
-                                                            />
-                                                            {/* <Link href={`/detail/${media_type}/${media_id}/review/${review.id}`}> */}
-                                                            <Typography
-                                                                variant="body2"
-                                                                color="textSecondary"
-                                                                paragraph
-                                                                sx={{
-                                                                    marginBottom:
-                                                                        '6px',
-                                                                }}>
-                                                                {review.content}
-                                                            </Typography>
-                                                            {/* </Link> */}
-                                                        </>
-                                                    )}
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Rating
+                                                        value={review.rating}
+                                                        readOnly
+                                                        sx={{
+                                                            marginBottom: '6px',
+                                                        }}
+                                                    />
+                                                    {/* <Link href={`/detail/${media_type}/${media_id}/review/${review.id}`}> */}
+                                                    <Typography
+                                                        variant="body2"
+                                                        color="textSecondary"
+                                                        paragraph
+                                                        sx={{
+                                                            marginBottom: '6px',
+                                                        }}>
+                                                        {review.content}
+                                                    </Typography>
+                                                    {/* </Link> */}
+                                                </>
+                                            )}
 
-                                                    {user?.id ==
-                                                        review.user.id && (
-                                                        <Grid
-                                                            sx={{
-                                                                display: 'flex',
-                                                                justifyContent:
-                                                                    'flex-end',
-                                                            }}>
-                                                            {editMode ===
-                                                            review.id ? (
-                                                                <Button
-                                                                    disabled={
-                                                                        isEditbuttonDisabled
-                                                                    }
-                                                                    variant="outlined"
-                                                                    onClick={() =>
-                                                                        handleConfirmEdit(
-                                                                            review.id,
-                                                                        )
-                                                                    }>
-                                                                    編集確定
-                                                                </Button>
-                                                            ) : (
-                                                                <ButtonGroup>
-                                                                    <Button
-                                                                        onClick={() =>
-                                                                            handleEdit(
-                                                                                review,
-                                                                            )
-                                                                        }>
-                                                                        編集
-                                                                    </Button>
-                                                                    <Button
-                                                                        color="error"
-                                                                        onClick={() =>
-                                                                            handleDelete(
-                                                                                review.id,
-                                                                            )
-                                                                        }>
-                                                                        削除
-                                                                    </Button>
-                                                                </ButtonGroup>
-                                                            )}
-                                                        </Grid>
+                                            {user?.id == review.user.id && (
+                                                <Grid
+                                                    sx={{
+                                                        display: 'flex',
+                                                        justifyContent:
+                                                            'flex-end',
+                                                    }}>
+                                                    {editMode === review.id ? (
+                                                        <Button
+                                                            disabled={
+                                                                isEditbuttonDisabled
+                                                            }
+                                                            variant="outlined"
+                                                            onClick={() =>
+                                                                handleConfirmEdit(
+                                                                    review.id,
+                                                                )
+                                                            }>
+                                                            編集確定
+                                                        </Button>
+                                                    ) : (
+                                                        <ButtonGroup>
+                                                            <Button
+                                                                onClick={() =>
+                                                                    handleEdit(
+                                                                        review,
+                                                                    )
+                                                                }>
+                                                                編集
+                                                            </Button>
+                                                            <Button
+                                                                color="error"
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        review.id,
+                                                                    )
+                                                                }>
+                                                                削除
+                                                            </Button>
+                                                        </ButtonGroup>
                                                     )}
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                    </SwiperSlide>
-                                ))}
+                                                </Grid>
+                                            )}
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
                             </Grid>
-                        </Swiper>
+                        ))
                     ) : (
                         <Typography
                             variant="h6"

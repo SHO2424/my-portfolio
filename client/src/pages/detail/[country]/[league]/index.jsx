@@ -211,113 +211,113 @@ const PremiDetailPage = ({ detail, league }) => {
                     ) : (
                         // データがロードされた後の表示
                         <>
-                            <Box sx={{ padding: '10px' }}>
-                                <Grid
-                                    container
-                                    spacing={{ md: 3 }}
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'space-around',
-                                        borderBottom: '1px solid gray',
-                                        padding: '2px 2px',
-                                    }}>
-                                    <Grid item xs={2}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            順位
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={1} />
-                                    <Grid item xs={3}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                        />
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        xs={1}
-                                        sx={{
-                                            display: {
-                                                xs: 'none',
-                                                md: 'block',
-                                            },
-                                        }}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            試合
-                                        </Typography>
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        xs={1}
-                                        sx={{
-                                            display: {
-                                                xs: 'none',
-                                                md: 'block',
-                                            },
-                                        }}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            勝
-                                        </Typography>
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        xs={1}
-                                        sx={{
-                                            display: {
-                                                xs: 'none',
-                                                md: 'block',
-                                            },
-                                        }}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            分
-                                        </Typography>
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        xs={1}
-                                        sx={{
-                                            display: {
-                                                xs: 'none',
-                                                md: 'block',
-                                            },
-                                        }}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            負
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={2}>
-                                        <Typography
-                                            variant="h6"
-                                            component={'div'}
-                                            noWrap
-                                            sx={{ fontSize: '15px' }}>
-                                            point
-                                        </Typography>
-                                    </Grid>
+                            <Grid
+                                container
+                                spacing={{ md: 3 }}
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-around',
+                                    borderBottom: '1px solid gray',
+                                    padding: '2px 2px',
+                                    margin: '2px 4px',
+                                }}>
+                                <Grid item xs={2}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        順位
+                                    </Typography>
                                 </Grid>
-                            </Box>
-                            <Swiper
+                                <Grid item xs={1} />
+                                <Grid item xs={3}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                    />
+                                </Grid>
+                                <Grid
+                                    item
+                                    xs={1}
+                                    sx={{
+                                        display: {
+                                            xs: 'none',
+                                            md: 'block',
+                                        },
+                                    }}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        試合
+                                    </Typography>
+                                </Grid>
+                                <Grid
+                                    item
+                                    xs={1}
+                                    sx={{
+                                        display: {
+                                            xs: 'none',
+                                            md: 'block',
+                                        },
+                                    }}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        勝
+                                    </Typography>
+                                </Grid>
+                                <Grid
+                                    item
+                                    xs={1}
+                                    sx={{
+                                        display: {
+                                            xs: 'none',
+                                            md: 'block',
+                                        },
+                                    }}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        分
+                                    </Typography>
+                                </Grid>
+                                <Grid
+                                    item
+                                    xs={1}
+                                    sx={{
+                                        display: {
+                                            xs: 'none',
+                                            md: 'block',
+                                        },
+                                    }}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        負
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <Typography
+                                        variant="h6"
+                                        component={'div'}
+                                        noWrap
+                                        sx={{ fontSize: '15px' }}>
+                                        point
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+                            {/* <Swiper
                                 mousewheel={{
                                     sensitivity: 5,
                                     releaseOnEdges: true,
@@ -325,148 +325,148 @@ const PremiDetailPage = ({ detail, league }) => {
                                 direction={'vertical'}
                                 modules={[A11y, Mousewheel]}
                                 style={{
-                                    marginTop: '20px',
+                                    // marginTop: '20px',
                                     padding: '15px',
                                     height: '100%',
                                     cursor: 'pointer',
                                 }}
-                                spaceBetween={5}
-                                slidesPerView={20}>
-                                {leagueStandings.map(data => (
-                                    <SwiperSlide key={data.rank}>
-                                        <Grid
-                                            container
-                                            spacing={{ md: 3 }}
+                                spaceBetween={10}
+                                slidesPerView={21}> */}
+                            {leagueStandings.map(data => (
+                                // <SwiperSlide key={data.rank} >
+                                <Grid
+                                    container
+                                    spacing={{ md: 3 }}
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'space-around',
+                                        alignItems: 'center',
+                                        borderBottom: '1px solid gray',
+                                        margin: '2px 4px',
+                                        padding: '2px',
+                                        // height:"30px"
+                                    }}>
+                                    <Grid item xs={2}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap>
+                                            {data.rank}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <ImageLoader
+                                            src={data.team.logo}
                                             sx={{
-                                                display: 'flex',
-                                                justifyContent: 'space-around',
-                                                alignItems: 'center',
-                                                borderBottom: '1px solid gray',
-                                                margin: '2px 4px',
-                                                padding: '2px',
-                                            }}>
-                                            <Grid item xs={2}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap>
-                                                    {data.rank}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid item xs={1}>
-                                                <ImageLoader
-                                                    src={data.team.logo}
-                                                    sx={{
-                                                        textAlign: 'center',
-                                                        height: {
-                                                            md: '30px',
-                                                            xs: '20px',
-                                                        }, // xsサイズでは30px、smサイズでは20pxに設定
-                                                        width: {
-                                                            md: '30px',
-                                                            xs: '20px',
-                                                        },
-                                                    }}
-                                                />
-                                            </Grid>
+                                                textAlign: 'center',
+                                                height: {
+                                                    md: '30px',
+                                                    xs: '20px',
+                                                }, // xsサイズでは30px、smサイズでは20pxに設定
+                                                width: {
+                                                    md: '30px',
+                                                    xs: '20px',
+                                                },
+                                            }}
+                                        />
+                                    </Grid>
 
-                                            <Grid item xs={3}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap
-                                                    sx={{
-                                                        width: '100%',
-                                                        fontSize: '15px',
-                                                        whiteSpace: 'nowrap',
-                                                        textOverflow:
-                                                            'ellipsis',
-                                                    }}>
-                                                    {data.team.name}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                xs={1}
-                                                sx={{
-                                                    display: {
-                                                        xs: 'none',
-                                                        md: 'block',
-                                                    },
-                                                }}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap>
-                                                    {data.all.played}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                xs={1}
-                                                sx={{
-                                                    display: {
-                                                        xs: 'none',
-                                                        md: 'block',
-                                                    },
-                                                }}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap
-                                                    sx={{
-                                                        display: {
-                                                            xs: 'none',
-                                                            md: 'block',
-                                                        },
-                                                    }}>
-                                                    {data.all.win}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                xs={1}
-                                                sx={{
-                                                    display: {
-                                                        xs: 'none',
-                                                        md: 'block',
-                                                    },
-                                                }}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap>
-                                                    {data.all.draw}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                xs={1}
-                                                sx={{
-                                                    display: {
-                                                        xs: 'none',
-                                                        md: 'block',
-                                                    },
-                                                }}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap>
-                                                    {data.all.lose}
-                                                </Typography>
-                                            </Grid>
-                                            <Grid item xs={2}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component={'div'}
-                                                    noWrap>
-                                                    {data.points}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
+                                    <Grid item xs={3}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap
+                                            sx={{
+                                                width: '100%',
+                                                fontSize: '15px',
+                                                whiteSpace: 'nowrap',
+                                                textOverflow: 'ellipsis',
+                                            }}>
+                                            {data.team.name}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        xs={1}
+                                        sx={{
+                                            display: {
+                                                xs: 'none',
+                                                md: 'block',
+                                            },
+                                        }}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap>
+                                            {data.all.played}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        xs={1}
+                                        sx={{
+                                            display: {
+                                                xs: 'none',
+                                                md: 'block',
+                                            },
+                                        }}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap
+                                            sx={{
+                                                display: {
+                                                    xs: 'none',
+                                                    md: 'block',
+                                                },
+                                            }}>
+                                            {data.all.win}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        xs={1}
+                                        sx={{
+                                            display: {
+                                                xs: 'none',
+                                                md: 'block',
+                                            },
+                                        }}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap>
+                                            {data.all.draw}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        xs={1}
+                                        sx={{
+                                            display: {
+                                                xs: 'none',
+                                                md: 'block',
+                                            },
+                                        }}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap>
+                                            {data.all.lose}
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Typography
+                                            variant="h6"
+                                            component={'div'}
+                                            noWrap>
+                                            {data.points}
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                                // </SwiperSlide>
+                            ))}
+                            {/* </Swiper> */}
                         </>
                     )}
                 </Box>
