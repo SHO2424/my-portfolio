@@ -331,12 +331,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                     releaseOnEdges: true,
                                 }}
                                 direction={'vertical'}
-                                modules={[
-    
-                            
-                                    A11y,
-                                    Mousewheel,
-                                ]}
+                                modules={[A11y, Mousewheel]}
                                 style={{
                                     marginTop: '20px',
                                     padding: '15px',
