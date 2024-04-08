@@ -329,18 +329,12 @@ const PremiDetailPage = ({ detail, league }) => {
                                 style={{
                                     marginTop: '20px',
                                     padding: '15px',
-                                    height: '80vh',
+                                    height: '100%',
                                     cursor: 'pointer',
                                 }}
-                                //  scrollbar={{ draggable: "true" }}
                                 spaceBetween={5}
                                 slidesPerView={20}
-                                //  breakpoints={{
-                                //   320: {
-                                //     slidesPerView: 15,
-                                //     spaceBetween: 10,
-                                //   }
-                                // }}
+                               
                             >
                                 {leagueStandings.map(data => (
                                     <SwiperSlide key={data.rank}>
