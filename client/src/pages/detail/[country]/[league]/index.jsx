@@ -227,6 +227,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                     borderBottom: '1px solid gray',
                                     padding: '2px 2px',
                                     margin: '2px 4px',
+                                    textAlign: 'center',
                                 }}
                                 style={{ width: '100%', margin: 0 }}>
                                 <Grid item xs={2}>
@@ -338,6 +339,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                         margin: '2px 4px',
                                         padding: '2px',
                                         // height:"30px"
+                                        textAlign: 'center',
                                     }}
                                     style={{ width: '100%', margin: 0 }}>
                                     <Grid item xs={2}>
