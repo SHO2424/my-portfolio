@@ -387,7 +387,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={handleClose}
-                        style={{ marginBottom: '15px',cursor:"pointer" }}
+                        style={{ marginBottom: '15px', cursor: 'pointer' }}
                     />
                     <Typography
                         // sx={{textAlign:"center"}}
@@ -468,7 +468,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={handleReviewsClose}
-                        style={{ marginBottom: '15px' ,cursor:"pointer" }}
+                        style={{ marginBottom: '15px', cursor: 'pointer' }}
                     />
                     {reviews.length > 0 ? (
                         reviews.map(review => (
@@ -642,7 +642,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={detailHandleClose}
-                        style={{ marginBottom: '15px' ,cursor:"pointer" }}
+                        style={{ marginBottom: '15px', cursor: 'pointer' }}
                     />
                     <Box
                         sx={{
