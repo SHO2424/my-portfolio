@@ -64,7 +64,7 @@ const First = () => {
                     sx={{
                         height: { xs: '75vh', sm: '88vh', md: '125vh' },
                         px: '20px', // X 軸（左右）のパディングを 20px に設定
-                        py: '50px', // Y 軸（上下）のパディングを 50px に設定
+                        py: '35px', // Y 軸（上下）のパディングを 50px に設定
                         display: 'flex',
                         justifyContent: 'center',
                     }}>
