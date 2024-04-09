@@ -214,7 +214,10 @@ const PremiDetailPage = ({ detail, league }) => {
                     ) : (
                         // データがロードされた後の表示
                         <>
-                            <ClearIcon onClick={handleClose} />
+                            <ClearIcon
+                                onClick={handleClose}
+                                style={{ marginBottom: '15px' }}
+                            />
                             <Grid
                                 container
                                 spacing={{ md: 3 }}

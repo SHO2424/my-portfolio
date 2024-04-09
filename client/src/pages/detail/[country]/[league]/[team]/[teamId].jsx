@@ -383,7 +383,10 @@ const TeamDetailPage = ({ detail }) => {
                         boxShadow: 24,
                         padding: '32px 40px',
                     }}>
-                    <ClearIcon onClick={handleClose} />
+                    <ClearIcon
+                        onClick={handleClose}
+                        style={{ marginBottom: '15px' }}
+                    />
                     <Typography
                         // sx={{textAlign:"center"}}
                         variant="h6"
@@ -635,7 +638,10 @@ const TeamDetailPage = ({ detail }) => {
                         boxShadow: 24,
                         p: 4,
                     }}>
-                    <ClearIcon onClick={detailHandleClose} />
+                    <ClearIcon
+                        onClick={detailHandleClose}
+                        style={{ marginBottom: '15px' }}
+                    />
                     <Box
                         sx={{
                             display: 'flex',
