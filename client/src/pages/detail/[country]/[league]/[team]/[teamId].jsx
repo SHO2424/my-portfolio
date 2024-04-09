@@ -320,7 +320,7 @@ const TeamDetailPage = ({ detail }) => {
                     display: 'flex',
                     alignItems: 'stretch',
                     marginTop: '50px',
-                    padding: '40px',
+                    padding: '20px',
                 }}>
                 {activeSquads.map(player => (
                     <Grid
