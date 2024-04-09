@@ -55,7 +55,7 @@ const First = () => {
 
     return (
         <AppLayout>
-            <SearchBar sx={{ paddingTop: '40px' }} />
+            <SearchBar />
             <Box sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                 <Grid
                     container
