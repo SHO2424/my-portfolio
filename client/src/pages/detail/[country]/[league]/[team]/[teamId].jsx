@@ -327,6 +327,8 @@ const TeamDetailPage = ({ detail }) => {
                         item
                         key={player.id}
                         xs={4}
+                        sm={3}
+                        md={2}
                         lg={1.5}
                         onClick={() => handlePlayer(player)}>
                         <Card sx={{ borderRadius: '3%', height: '100%' }}>
@@ -385,7 +387,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={handleClose}
-                        style={{ marginBottom: '15px' }}
+                        style={{ marginBottom: '15px',cursor:"pointer" }}
                     />
                     <Typography
                         // sx={{textAlign:"center"}}
@@ -466,7 +468,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={handleReviewsClose}
-                        style={{ marginBottom: '15px' }}
+                        style={{ marginBottom: '15px' ,cursor:"pointer" }}
                     />
                     {reviews.length > 0 ? (
                         reviews.map(review => (
@@ -640,7 +642,7 @@ const TeamDetailPage = ({ detail }) => {
                     }}>
                     <ClearIcon
                         onClick={detailHandleClose}
-                        style={{ marginBottom: '15px' }}
+                        style={{ marginBottom: '15px' ,cursor:"pointer" }}
                     />
                     <Box
                         sx={{
