@@ -126,10 +126,7 @@ const PremiDetailPage = ({ detail, league }) => {
                     // justifyContent:"space-around"
                 }}>
                 {detail.map(team => (
-                    <Grid item key={team.id} xs={4}
-                    sm={3}
-                    md={2}
-                    lg={1.5}>
+                    <Grid item key={team.id} xs={4} sm={3} md={2} lg={1.5}>
                         <Card sx={{ borderRadius: '10%', height: '100%' }}>
                             <CardActionArea sx={{ flexGrow: 1 }}>
                                 <Link
@@ -219,7 +216,10 @@ const PremiDetailPage = ({ detail, league }) => {
                         <>
                             <ClearIcon
                                 onClick={handleClose}
-                                style={{ marginBottom: '15px', cursor:"pointer" }}
+                                style={{
+                                    marginBottom: '15px',
+                                    cursor: 'pointer',
+                                }}
                             />
                             <Grid
                                 container
