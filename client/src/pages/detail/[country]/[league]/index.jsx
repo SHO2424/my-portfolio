@@ -220,7 +220,7 @@ const PremiDetailPage = ({ detail, league }) => {
                             />
                             <Grid
                                 container
-                                spacing={{ md: 3 }}
+                                spacing={{ md: 1 }}
                                 sx={{
                                     display: 'flex',
                                     justifyContent: 'space-around',
@@ -329,7 +329,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                 <Grid
                                     container
                                     key={data.rank}
-                                    spacing={{ md: 3 }}
+                                    spacing={{ md: 1 }}
                                     sx={{
                                         display: 'flex',
                                         justifyContent: 'space-around',
