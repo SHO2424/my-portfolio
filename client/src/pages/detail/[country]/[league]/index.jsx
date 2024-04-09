@@ -227,7 +227,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                     borderBottom: '1px solid gray',
                                     padding: '2px 2px',
                                     margin: '2px 4px',
-                                }}>
+                                }}
+                                style={{ width: '100%', margin: 0 }}>
                                 <Grid item xs={2}>
                                     <Typography
                                         variant="h6"
@@ -323,22 +324,6 @@ const PremiDetailPage = ({ detail, league }) => {
                                     </Typography>
                                 </Grid>
                             </Grid>
-
-                            {/* <Swiper
-                                mousewheel={{
-                                    sensitivity: 5,
-                                    releaseOnEdges: true,
-                                }}
-                                direction={'vertical'}
-                                modules={[A11y, Mousewheel]}
-                                style={{
-                                    // marginTop: '20px',
-                                    padding: '15px',
-                                    height: '100%',
-                                    cursor: 'pointer',
-                                }}
-                                spaceBetween={10}
-                                slidesPerView={21}> */}
                             {leagueStandings.map(data => (
                                 // <SwiperSlide key={data.rank} >
                                 <Grid
@@ -353,7 +338,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                         margin: '2px 4px',
                                         padding: '2px',
                                         // height:"30px"
-                                    }}>
+                                    }}
+                                    style={{ width: '100%', margin: 0 }}>
                                     <Grid item xs={2}>
                                         <Typography
                                             variant="h6"
