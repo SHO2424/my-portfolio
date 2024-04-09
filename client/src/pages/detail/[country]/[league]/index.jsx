@@ -17,7 +17,7 @@ import Button from '@/components/Button';
 import { CircularProgress } from '@mui/material';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import BackButton from '@/components/Layouts/backButton';
-
+import ClearIcon from '@mui/icons-material/Clear';
 // import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 
 const PremiDetailPage = ({ detail, league }) => {
@@ -214,6 +214,7 @@ const PremiDetailPage = ({ detail, league }) => {
                     ) : (
                         // データがロードされた後の表示
                         <>
+                            <ClearIcon onClick={handleClose} />
                             <Grid
                                 container
                                 spacing={{ md: 3 }}

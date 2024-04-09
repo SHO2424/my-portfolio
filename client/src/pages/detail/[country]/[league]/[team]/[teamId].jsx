@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
 import Button from '@/components/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useAuth } from '@/hooks/auth';
-
+import ClearIcon from '@mui/icons-material/Clear';
 const TeamDetailPage = ({ detail }) => {
     const [activeSquads, setActiveSquads] = useState([]);
     const [reviewOpen, setReviewOpen] = useState(false);
@@ -383,6 +383,7 @@ const TeamDetailPage = ({ detail }) => {
                         boxShadow: 24,
                         padding: '32px 40px',
                     }}>
+                    <ClearIcon onClick={handleClose} />
                     <Typography
                         // sx={{textAlign:"center"}}
                         variant="h6"
@@ -460,6 +461,10 @@ const TeamDetailPage = ({ detail }) => {
                         height: { xs: '80%', sm: '90%', md: '90%' },
                         overflowY: 'auto',
                     }}>
+                    <ClearIcon
+                        onClick={handleReviewsClose}
+                        style={{ marginBottom: '15px' }}
+                    />
                     {reviews.length > 0 ? (
                         reviews.map(review => (
                             <Grid
@@ -630,6 +635,7 @@ const TeamDetailPage = ({ detail }) => {
                         boxShadow: 24,
                         p: 4,
                     }}>
+                    <ClearIcon onClick={detailHandleClose} />
                     <Box
                         sx={{
                             display: 'flex',
