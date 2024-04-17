@@ -92,7 +92,8 @@ const Login = () => {
                     <div className="block mt-4 flex items-center justify-between">
                         <label
                             htmlFor="remember_me"
-                            className="inline-flex items-center">
+                            className="inline-flex items-center"
+                        >
                             <input
                                 id="remember_me"
                                 type="checkbox"
@@ -109,18 +110,15 @@ const Login = () => {
                         </label>
                         <Link
                             href="/forgot-password"
-                            className="underline text-sm text-gray-600 hover:text-gray-900">
+                            className="underline text-sm text-gray-600 hover:text-gray-900"
+                        >
                             Forgot your password?
                         </Link>
                     </div>
 
                     <div className="flex items-center justify-between mt-8">
                         <Button>
-                        <Link
-                            href="/register"
-                            className="">
-                            Not registered yet?
-                        </Link>
+                            <Link href="/register">Not registered yet?</Link>
                         </Button>
 
                         <Button className="ml-3">Login</Button>
