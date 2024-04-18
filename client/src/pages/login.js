@@ -118,7 +118,7 @@ const Login = () => {
 
                     <div className="flex items-center justify-between mt-8">
                         <Button>
-                            <Link href="/register">Not registered yet??</Link>
+                            <Link href="/register">Not registered yet?</Link>
                         </Button>
 
                         <Button className="ml-3">Login</Button>
