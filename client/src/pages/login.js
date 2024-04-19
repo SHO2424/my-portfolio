@@ -80,7 +80,12 @@ const Login = () => {
             <AuthCard>
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
-                <Box sx={{ textAlign: 'center' }}>
+                <Box
+                    sx={{
+                        textAlign: 'center',
+                        // width:{xs:"60%",md:"auto"},
+                        // margin:{xs:"auto"}
+                    }}>
                     <Box>
                         <Typography
                             sx={{
@@ -107,7 +112,7 @@ const Login = () => {
                                 ? 'translateY(0)'
                                 : 'translateY(40px)',
                         }}
-                        className="w-full  sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg">
+                        className="w-full sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg">
                         {/* Email Address */}
                         <div>
                             <Label htmlFor="email">Email</Label>
@@ -202,8 +207,13 @@ const Login = () => {
                 {/* </GuestLayout> */}
                 {/* <GuestLayout> */}
                 {/* <AuthCard> */}
-                <Box sx={{ textAlign: 'center' }}>
-                    <Box>
+                <Box
+                    sx={{
+                        textAlign: 'center',
+                        //   width:{xs:"60%",md:"auto"},
+                        //   margin:{xs:"auto"},
+                    }}>
+                    <Box sx={{ marginTop: { xs: '30px', sm: '0px' } }}>
                         <Typography
                             sx={{
                                 color: '#d58fe3',
