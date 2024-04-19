@@ -10,7 +10,7 @@ import { useAuth } from '@/hooks/auth';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Typography } from '@mui/material';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
 const Login = () => {
     const router = useRouter();
 
