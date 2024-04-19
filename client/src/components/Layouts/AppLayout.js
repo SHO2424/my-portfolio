@@ -1,11 +1,13 @@
 import Navigation from '@/components/Layouts/Navigation';
 import { useAuth } from '@/hooks/auth';
 
-const AppLayout = ({ children, style }) => {
+const AppLayout = ({ children }) => {
     const { user } = useAuth({ middleware: 'auth' });
 
     return (
-        <div className="min-h-screen bg-gray-800" style={style}>
+        <div
+            className="min-h-screen"
+            style={{ background: 'rgb(204,204,204)' }}>
             <Navigation user={user} />
 
             {/* Page Heading */}

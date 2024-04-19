@@ -9,6 +9,12 @@ const Layout = ({ image }) => {
                 height: { xs: '95px', sm: '150px', md: '300px' },
                 borderRadius: '50%',
                 objectFit: 'contain',
+
+                boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)',
+                transition: 'all .4s',
+                '&:hover': {
+                    transform: 'translate(2px,2px)',
+                },
             }}>
             <CardMedia
                 sx={{

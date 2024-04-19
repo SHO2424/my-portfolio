@@ -21,7 +21,7 @@ const Register = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [errors, setErrors] = useState([]);
 
-    const submitForm = event => {
+    const submitFormRegister = event => {
         event.preventDefault();
 
         register({
@@ -36,7 +36,7 @@ const Register = () => {
     return (
         <GuestLayout>
             <AuthCard>
-                <form onSubmit={submitForm}>
+                <form onSubmit={submitFormRegister}>
                     {/* Name */}
                     <div>
                         <Label htmlFor="name">Name</Label>

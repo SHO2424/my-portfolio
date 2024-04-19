@@ -21,10 +21,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const csrf = async () => {
         await axios.get('/sanctum/csrf-cookie');
     };
-    const register = async ({ setErrors, ...props }) => {
+    const register = async ({ setRegisterErrors, ...props }) => {
         await csrf();
 
-        setErrors([]);
+        setRegisterErrors([]);
 
         axios
             .post('/register', props)
@@ -32,7 +32,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             .catch(error => {
                 if (error.response.status !== 422) throw error;
 
-                setErrors(error.response.data.errors);
+                setRegisterErrors(error.response.data.errors);
             });
     };
 

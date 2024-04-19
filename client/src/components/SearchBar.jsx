@@ -27,7 +27,7 @@ const SearchBar = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexDirection: { xs: 'column', md: 'row' },
-                // borderRadius:"10px"
+                borderRadius: '30px',
             }}>
             <TextField
                 id="filled-basic"
@@ -41,6 +41,7 @@ const SearchBar = () => {
                     backgroundColor: 'white',
                     border: 'none',
                 }}
+                // style={{border:"none"}}
             />
             <Button type="submit" sx={{ textAlign: 'center' }}>
                 <SearchIcon />

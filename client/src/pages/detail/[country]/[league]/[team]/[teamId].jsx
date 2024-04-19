@@ -307,7 +307,9 @@ const TeamDetailPage = ({ detail }) => {
                         <Button onClick={handleOpen}>チームを評価する</Button>
                         <Button
                             onClick={handleReviewsOpen}
-                            style={{ marginLeft: '10px' }}>
+                            style={{
+                                marginLeft: '10px',
+                            }}>
                             コメントを見る
                         </Button>
                     </Box>
