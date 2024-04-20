@@ -73,7 +73,7 @@ const search = () => {
                         padding: { xs: '18px', lg: '40px' },
                     }}>
                     {results.map(team => (
-                        <Grid key={team.id} item xs={4} md={3} lg={2.4}>
+                        <Grid item key={team.id} xs={4} sm={3} md={2}>
                             <Card sx={{ borderRadius: '10%', height: '100%' }}>
                                 <CardActionArea sx={{ flexGrow: 1 }}>
                                     <Link
@@ -101,12 +101,20 @@ const search = () => {
                                                     textAlign: 'center',
                                                 }}
                                             />
-                                            <CardContent sx={{ width: '100%' }}>
+                                            <CardContent
+                                                sx={{
+                                                    padding: 0, // パディングをなくす
+                                                    width: '100%',
+                                                    '&:last-child': {
+                                                        paddingBottom: 0, // CardContentの下部のパディングをなくす
+                                                    },
+                                                }}>
                                                 <Typography
                                                     varient="h6"
                                                     component={'div'}
                                                     noWrap
                                                     sx={{
+                                                        padding: '5px 10px',
                                                         textAlign: 'center',
                                                         width: '100%',
                                                         textOverflow:

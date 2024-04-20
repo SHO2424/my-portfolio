@@ -27,21 +27,21 @@ const SearchBar = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexDirection: { xs: 'column', md: 'row' },
-                borderRadius: '30px',
+                border: 'none', // borderを削除しました
+                outline: 'none',
             }}>
             <TextField
                 id="filled-basic"
                 label="Let's search in English !"
                 onChange={handleChange}
                 fullWidth
-                // placeholder="検索する"
                 sx={{
+                    borderRadius: '30%', // borderRadiusを30pxに保持しました
+                    outline: 'none',
                     marginRight: { md: '40px' },
                     marginBottom: { xs: '30px', md: 0 },
-                    backgroundColor: 'white',
-                    border: 'none',
+                    // backgroundColor: 'white',
                 }}
-                // style={{border:"none"}}
             />
             <Button type="submit" sx={{ textAlign: 'center' }}>
                 <SearchIcon />
