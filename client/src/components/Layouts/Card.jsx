@@ -10,10 +10,10 @@ const Layout = ({ image }) => {
                 borderRadius: '50%',
                 objectFit: 'contain',
 
-                boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)',
-                transition: 'all .4s',
+                boxShadow: '3px 3px 5px rgb(14 12 12 / 45%)',
+                transition: 'all .3s',
                 '&:hover': {
-                    transform: 'translate(2px,2px)',
+                    transform: 'translate(3px,3px)',
                 },
             }}>
             <CardMedia

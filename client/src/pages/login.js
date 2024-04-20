@@ -83,18 +83,18 @@ const Login = () => {
                 <Box
                     sx={{
                         textAlign: 'center',
-                        // width:{xs:"60%",md:"auto"},
-                        // margin:{xs:"auto"}
+                        width: { xs: '60%', sm: '30%' },
+                        margin: 'auto',
                     }}>
                     <Box>
                         <Typography
                             sx={{
-                                color: '#d58fe3',
+                                color: 'rgb(45, 80, 129)',
                                 fontWeight: 'bolder',
                                 marginBottom: '45px',
                                 paddingBottom: '5px',
                                 fontSize: '25px',
-                                borderBottom: '2px solid #d58fe3',
+                                borderBottom: '2px solid rgb(45, 80, 129)',
                             }}>
                             Already registered
                         </Typography>
@@ -104,6 +104,7 @@ const Login = () => {
                     <form
                         onSubmit={submitForm}
                         style={{
+                            borderRadius: '1.5rem',
                             textAlign: 'center',
                             transition: 'opacity 2s, transform 2s',
                             boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.2)',
@@ -196,7 +197,6 @@ const Login = () => {
                                 className="ml-3"
                                 style={{
                                     borderRadius: '30px',
-                                    background: '#d58fe3',
                                 }}>
                                 Login
                             </Button>
@@ -210,18 +210,20 @@ const Login = () => {
                 <Box
                     sx={{
                         textAlign: 'center',
-                        //   width:{xs:"60%",md:"auto"},
-                        //   margin:{xs:"auto"},
+                        width: { xs: '60%', sm: '30%' },
+                        margin: 'auto',
+                        paddingBottom: { xs: '30px', sm: '0px' },
                     }}>
                     <Box sx={{ marginTop: { xs: '30px', sm: '0px' } }}>
                         <Typography
                             sx={{
-                                color: '#d58fe3',
+                                color: 'rgb(45, 80, 129)',
+
                                 fontWeight: 'bolder',
                                 marginBottom: '45px',
                                 paddingBottom: '5px',
                                 fontSize: '25px',
-                                borderBottom: '2px solid #d58fe3',
+                                borderBottom: '2px solid rgb(45, 80, 129)',
                             }}>
                             Not registered yet
                         </Typography>
@@ -230,6 +232,7 @@ const Login = () => {
                     <form
                         onSubmit={submitFormRegister}
                         style={{
+                            borderRadius: '1.5rem',
                             textAlign: 'center',
                             transition: 'opacity 2s, transform 2s',
                             opacity: isMounted ? 1 : 0,
@@ -336,7 +339,6 @@ const Login = () => {
                                 className="ml-4"
                                 style={{
                                     borderRadius: '30px',
-                                    background: '#d58fe3',
                                 }}>
                                 Register
                             </Button>
