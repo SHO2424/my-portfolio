@@ -20,7 +20,7 @@ const Login = () => {
     });
     const [name, setName] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
-
+    const [passwordError, setPasswordError] = useState(''); // ステップ1: エラーメッセージ用の状態を追加
     const [email, setEmail] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -57,7 +57,11 @@ const Login = () => {
 
     const submitFormRegister = event => {
         event.preventDefault();
-
+        if (registerPassword !== passwordConfirmation) {
+            // ステップ2: パスワードが一致するかチェック
+            setPasswordError('Passwords do not match.'); // ステップ3: エラーメッセージを設定
+            return; // 一致しない場合はここで処理を中断
+        }
         register({
             name,
             email: registerEmail,
@@ -327,7 +331,9 @@ const Login = () => {
                                 className="mt-2"
                             />
                         </div>
-
+                        {passwordError && (
+                            <div className="text-red-500">{passwordError}</div>
+                        )}
                         <div className="items-center mt-4">
                             {/* <Link
                         href="/login"
