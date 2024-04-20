@@ -40,7 +40,6 @@ const SearchBar = () => {
                     outline: 'none',
                     marginRight: { md: '40px' },
                     marginBottom: { xs: '30px', md: 0 },
-                    // backgroundColor: 'white',
                 }}
             />
             <Button type="submit" sx={{ textAlign: 'center' }}>

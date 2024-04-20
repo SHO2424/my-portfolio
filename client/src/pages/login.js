@@ -62,6 +62,11 @@ const Login = () => {
             setPasswordError('Passwords do not match.'); // ステップ3: エラーメッセージを設定
             return; // 一致しない場合はここで処理を中断
         }
+        if (registerPassword.length <= 7) {
+            // パスワードの長さが7文字以下かチェック
+            setPasswordError('Password must be at least 8 characters long.'); // エラーメッセージを設定
+            return; // 処理を中断
+        }
         register({
             name,
             email: registerEmail,
