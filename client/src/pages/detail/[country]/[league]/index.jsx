@@ -134,8 +134,20 @@ const PremiDetailPage = ({ detail, league }) => {
                         md={2}
                         // lg={1.5}
                     >
-                        <Card sx={{ borderRadius: '10%', height: '100%' }}>
-                            <CardActionArea sx={{ flexGrow: 1 }}>
+                        <Card
+                            sx={{
+                                borderRadius: '10%',
+                                height: '100%',
+                                boxShadow: '3px 3px 5px rgb(14 12 12 / 45%)',
+                                transition: 'all .3s',
+                                '&:hover': {
+                                    transform: 'translate(3px,3px)',
+                                },
+                            }}>
+                            <CardActionArea
+                                sx={{
+                                    flexGrow: 1,
+                                }}>
                                 <Link
                                     href={`/detail/${team.team.country}/${league}/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
                                     <Box

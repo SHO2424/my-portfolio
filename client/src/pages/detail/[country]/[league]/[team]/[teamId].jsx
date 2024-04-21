@@ -333,7 +333,16 @@ const TeamDetailPage = ({ detail }) => {
                         md={2}
                         lg={1.5}
                         onClick={() => handlePlayer(player)}>
-                        <Card sx={{ borderRadius: '3%', height: '100%' }}>
+                        <Card
+                            sx={{
+                                borderRadius: '3%',
+                                height: '100%',
+                                boxShadow: '3px 3px 5px rgb(14 12 12 / 45%)',
+                                transition: 'all .3s',
+                                '&:hover': {
+                                    transform: 'translate(3px,3px)',
+                                },
+                            }}>
                             <CardActionArea sx={{ height: '100%' }}>
                                 <Box
                                     sx={{
