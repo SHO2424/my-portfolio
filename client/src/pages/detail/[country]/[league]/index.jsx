@@ -77,6 +77,7 @@ const PremiDetailPage = ({ detail, league }) => {
             const featchData = response.data.response;
             // console.log(featchData[0].league);
             const standingsData = featchData[0].league.standings[0];
+            console.log(standingsData);
             setLeagueStandings(standingsData);
         } catch {
             return { notFound: true };
@@ -174,6 +175,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                                     md: '60px',
                                                 },
                                                 textAlign: 'center',
+                                                justifyContent:"center"
                                             }}
                                         />
 

@@ -29,6 +29,7 @@ const SearchBar = () => {
                 flexDirection: { xs: 'column', md: 'row' },
                 border: 'none', // borderを削除しました
                 outline: 'none',
+                // background:"none"
             }}>
             <TextField
                 id="filled-basic"
@@ -40,6 +41,7 @@ const SearchBar = () => {
                     outline: 'none',
                     marginRight: { md: '40px' },
                     marginBottom: { xs: '30px', md: 0 },
+                    // background:"none"
                 }}
             />
             <Button type="submit" sx={{ textAlign: 'center' }}>
