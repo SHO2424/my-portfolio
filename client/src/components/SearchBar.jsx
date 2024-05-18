@@ -30,8 +30,7 @@ const SearchBar = () => {
                 border: 'none', // borderを削除しました
                 outline: 'none',
                 // background:"none"
-            }}
-        >
+            }}>
             <TextField
                 id="filled-basic"
                 label="Let's search in English !"

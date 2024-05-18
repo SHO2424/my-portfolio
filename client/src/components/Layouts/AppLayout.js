@@ -7,8 +7,7 @@ const AppLayout = ({ children }) => {
     return (
         <div
             className="min-h-screen"
-            style={{ background: 'rgb(204,204,204)' }}
-        >
+            style={{ background: 'rgb(204,204,204)' }}>
             <Navigation user={user} />
 
             {/* Page Heading */}

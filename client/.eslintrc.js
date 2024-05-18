@@ -47,7 +47,7 @@ module.exports = {
         'react/react-in-jsx-scope': 0,
         'linebreak-style': ['error', 'unix'],
         semi: 'off',
-        "jsx-quotes": ["error", "prefer-double"],
+        'jsx-quotes': ['error', 'prefer-double'],
         'prettier/prettier': [
             'error',
             { endOfLine: 'auto' },

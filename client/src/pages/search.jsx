@@ -59,8 +59,7 @@ const search = () => {
                     item
                     textAlign={'center'}
                     xs={12}
-                    sx={{ height: '550px' }}
-                >
+                    sx={{ height: '550px' }}>
                     <Typography sx={{ color: 'white' }}>検索中...</Typography>
                 </Grid>
             ) : results.length > 0 ? (
@@ -72,15 +71,13 @@ const search = () => {
                         alignItems: 'center',
                         marginTop: '50px',
                         padding: { xs: '18px', lg: '40px' },
-                    }}
-                >
+                    }}>
                     {results.map(team => (
                         <Grid item key={team.id} xs={4} sm={3} md={2}>
                             <Card sx={{ borderRadius: '10%', height: '100%' }}>
                                 <CardActionArea sx={{ flexGrow: 1 }}>
                                     <Link
-                                        href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}
-                                    >
+                                        href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
                                         <Box
                                             sx={{
                                                 display: 'flex',
@@ -88,8 +85,7 @@ const search = () => {
                                                 justifyContent: 'center',
                                                 flexDirection: 'column',
                                                 alignItems: 'center',
-                                            }}
-                                        >
+                                            }}>
                                             <ImageLoader
                                                 src={team.team.logo}
                                                 sx={{
@@ -112,8 +108,7 @@ const search = () => {
                                                     '&:last-child': {
                                                         paddingBottom: 0, // CardContentの下部のパディングをなくす
                                                     },
-                                                }}
-                                            >
+                                                }}>
                                                 <Typography
                                                     varient="h6"
                                                     component={'div'}
@@ -126,8 +121,7 @@ const search = () => {
                                                             'ellipsis',
                                                         overflow: 'hidden',
                                                         whiteSpace: 'nowrap',
-                                                    }}
-                                                >
+                                                    }}>
                                                     {team.team.name}
                                                 </Typography>
                                             </CardContent>
@@ -143,8 +137,7 @@ const search = () => {
                     item
                     textAlign={'center'}
                     xs={12}
-                    sx={{ height: '550px' }}
-                >
+                    sx={{ height: '550px' }}>
                     <Typography sx={{ color: 'white' }}>
                         検索結果が見つかりませんでした
                     </Typography>
