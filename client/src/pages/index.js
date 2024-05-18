@@ -17,18 +17,21 @@ export default function Home() {
                             justifyContent: 'center',
                             alignItems: 'center',
                             height: '100%',
-                        }}>
+                        }}
+                    >
                         <Button>
                             <Link
                                 href="/login"
-                                className="text-sm text-white-700">
+                                className="text-sm text-white-700"
+                            >
                                 Login
                             </Link>
                         </Button>
                         <Button style={{ marginLeft: '10px' }}>
                             <Link
                                 href="/register"
-                                className="text-sm text-white-700">
+                                className="text-sm text-white-700"
+                            >
                                 Register
                             </Link>
                         </Button>

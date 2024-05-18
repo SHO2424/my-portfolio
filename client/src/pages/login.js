@@ -94,7 +94,8 @@ const Login = () => {
                         textAlign: 'center',
                         width: { xs: '60%', sm: '30%' },
                         margin: 'auto',
-                    }}>
+                    }}
+                >
                     <Box>
                         <Typography
                             sx={{
@@ -104,7 +105,8 @@ const Login = () => {
                                 paddingBottom: '5px',
                                 fontSize: '25px',
                                 borderBottom: '2px solid rgb(45, 80, 129)',
-                            }}>
+                            }}
+                        >
                             Already registered
                         </Typography>
                         {/* <ArrowDownwardIcon sx={{color:"white"}}/> */}
@@ -122,7 +124,8 @@ const Login = () => {
                                 ? 'translateY(0)'
                                 : 'translateY(40px)',
                         }}
-                        className="w-full sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg">
+                        className="w-full sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg"
+                    >
                         {/* Email Address */}
                         <div>
                             <Label htmlFor="email">Email</Label>
@@ -172,10 +175,12 @@ const Login = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                            }}>
+                            }}
+                        >
                             <label
                                 htmlFor="remember_me"
-                                className="inline-flex items-center">
+                                className="inline-flex items-center"
+                            >
                                 <input
                                     id="remember_me"
                                     type="checkbox"
@@ -192,7 +197,8 @@ const Login = () => {
                             </label>
                             <Link
                                 href="/forgot-password"
-                                className="underline text-sm text-gray-600 hover:text-gray-900 mt-4">
+                                className="underline text-sm text-gray-600 hover:text-gray-900 mt-4"
+                            >
                                 Forgot your password?
                             </Link>
                         </div>
@@ -206,7 +212,8 @@ const Login = () => {
                                 className="ml-3"
                                 style={{
                                     borderRadius: '30px',
-                                }}>
+                                }}
+                            >
                                 Login
                             </Button>
                         </div>
@@ -222,7 +229,8 @@ const Login = () => {
                         width: { xs: '60%', sm: '30%' },
                         margin: 'auto',
                         paddingBottom: { xs: '30px', sm: '0px' },
-                    }}>
+                    }}
+                >
                     <Box sx={{ marginTop: { xs: '30px', sm: '0px' } }}>
                         <Typography
                             sx={{
@@ -233,7 +241,8 @@ const Login = () => {
                                 paddingBottom: '5px',
                                 fontSize: '25px',
                                 borderBottom: '2px solid rgb(45, 80, 129)',
-                            }}>
+                            }}
+                        >
                             Not registered yet
                         </Typography>
                         {/* <ArrowDownwardIcon sx={{color:"white" ,fontSize:"40px"}}/> */}
@@ -250,7 +259,8 @@ const Login = () => {
                                 : 'translateY(40px)',
                             boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.2)',
                         }}
-                        className="w-full  sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg">
+                        className="w-full  sm:max-w-md mt-6 px-6 py-4 bg-gray-100 shadow-md overflow-hidden sm:rounded-lg"
+                    >
                         {/* Name */}
                         <div>
                             <Label htmlFor="name">Name</Label>
@@ -350,7 +360,8 @@ const Login = () => {
                                 className="ml-4"
                                 style={{
                                     borderRadius: '30px',
-                                }}>
+                                }}
+                            >
                                 Register
                             </Button>
                         </div>

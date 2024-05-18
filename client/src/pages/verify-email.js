@@ -21,7 +21,8 @@ const VerifyEmail = () => {
                     <Link href="/">
                         <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
                     </Link>
-                }>
+                }
+            >
                 <div className="mb-4 text-sm text-gray-600">
                     Thanks for signing up! Before getting started, could you
                     verify your email address by clicking on the link we just
@@ -38,14 +39,16 @@ const VerifyEmail = () => {
 
                 <div className="mt-4 flex items-center justify-between">
                     <Button
-                        onClick={() => resendEmailVerification({ setStatus })}>
+                        onClick={() => resendEmailVerification({ setStatus })}
+                    >
                         Resend Verification Email
                     </Button>
 
                     <button
                         type="button"
                         className="underline text-sm text-gray-600 hover:text-gray-900"
-                        onClick={logout}>
+                        onClick={logout}
+                    >
                         Logout
                     </button>
                 </div>

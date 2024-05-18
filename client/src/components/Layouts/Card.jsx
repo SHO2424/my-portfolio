@@ -15,7 +15,8 @@ const Layout = ({ image }) => {
                 '&:hover': {
                     transform: 'translate(3px,3px)',
                 },
-            }}>
+            }}
+        >
             <CardMedia
                 sx={{
                     width: { xs: '95px', sm: '150px', md: '300px' },
