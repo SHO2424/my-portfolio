@@ -101,7 +101,8 @@ const PremiDetailPage = ({ detail, league }) => {
                     textAlign: 'center',
                     justifyContent: 'center', // 水平方向の中心揃え
                     alignItems: 'center',
-                }}>
+                }}
+            >
                 <Layout image={leagueImg} sx={{ cursor: 'default' }} />
                 <Typography
                     varient="h1"
@@ -111,7 +112,8 @@ const PremiDetailPage = ({ detail, league }) => {
                         color: 'white',
                         marginTop: '30px',
                         marginBottom: '25px',
-                    }}>
+                    }}
+                >
                     {leagueName}
                 </Typography>
                 <Button onClick={showStatistic}>順位表</Button>
@@ -125,7 +127,8 @@ const PremiDetailPage = ({ detail, league }) => {
                     alignItems: 'center',
                     padding: { xs: '18px', lg: '40px' },
                     // justifyContent:"space-around"
-                }}>
+                }}
+            >
                 {detail.map(team => (
                     <Grid
                         item
@@ -144,13 +147,16 @@ const PremiDetailPage = ({ detail, league }) => {
                                 '&:hover': {
                                     transform: 'translate(3px,3px)',
                                 },
-                            }}>
+                            }}
+                        >
                             <CardActionArea
                                 sx={{
                                     flexGrow: 1,
-                                }}>
+                                }}
+                            >
                                 <Link
-                                    href={`/detail/${team.team.country}/${league}/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
+                                    href={`/detail/${team.team.country}/${league}/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}
+                                >
                                     <Box
                                         sx={{
                                             display: 'flex',
@@ -159,7 +165,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                             flexDirection: 'column',
                                             alignItems: 'center',
                                             // paddingTop:"35px"
-                                        }}>
+                                        }}
+                                    >
                                         <ImageLoader
                                             src={team.team.logo}
                                             sx={{
@@ -175,7 +182,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                                     md: '60px',
                                                 },
                                                 textAlign: 'center',
-                                                justifyContent:"center"
+                                                justifyContent: 'center',
                                             }}
                                         />
 
@@ -186,7 +193,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 '&:last-child': {
                                                     paddingBottom: 0, // CardContentの下部のパディングをなくす
                                                 },
-                                            }}>
+                                            }}
+                                        >
                                             <Typography
                                                 varient="h6"
                                                 component={'div'}
@@ -198,7 +206,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                                     textOverflow: 'ellipsis',
                                                     overflow: 'hidden',
                                                     whiteSpace: 'nowrap',
-                                                }}>
+                                                }}
+                                            >
                                                 {team.team.name}
                                             </Typography>
                                         </CardContent>
@@ -226,7 +235,8 @@ const PremiDetailPage = ({ detail, league }) => {
                         width: { xs: '85%', sm: '80%', md: '70%' },
                         height: { xs: '80%', sm: '90%', md: '90%' },
                         overflowY: 'auto',
-                    }}>
+                    }}
+                >
                     {loading ? (
                         // ローディング状態の表示
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -253,13 +263,15 @@ const PremiDetailPage = ({ detail, league }) => {
                                     margin: '2px 4px',
                                     textAlign: 'center',
                                 }}
-                                style={{ width: '100%', margin: 0 }}>
+                                style={{ width: '100%', margin: 0 }}
+                            >
                                 <Grid item xs={2}>
                                     <Typography
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         順位
                                     </Typography>
                                 </Grid>
@@ -279,12 +291,14 @@ const PremiDetailPage = ({ detail, league }) => {
                                             xs: 'none',
                                             md: 'block',
                                         },
-                                    }}>
+                                    }}
+                                >
                                     <Typography
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         試合
                                     </Typography>
                                 </Grid>
@@ -296,12 +310,14 @@ const PremiDetailPage = ({ detail, league }) => {
                                             xs: 'none',
                                             md: 'block',
                                         },
-                                    }}>
+                                    }}
+                                >
                                     <Typography
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         勝
                                     </Typography>
                                 </Grid>
@@ -313,12 +329,14 @@ const PremiDetailPage = ({ detail, league }) => {
                                             xs: 'none',
                                             md: 'block',
                                         },
-                                    }}>
+                                    }}
+                                >
                                     <Typography
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         分
                                     </Typography>
                                 </Grid>
@@ -330,12 +348,14 @@ const PremiDetailPage = ({ detail, league }) => {
                                             xs: 'none',
                                             md: 'block',
                                         },
-                                    }}>
+                                    }}
+                                >
                                     <Typography
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         負
                                     </Typography>
                                 </Grid>
@@ -344,7 +364,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                         variant="h6"
                                         component={'div'}
                                         noWrap
-                                        sx={{ fontSize: '15px' }}>
+                                        sx={{ fontSize: '15px' }}
+                                    >
                                         point
                                     </Typography>
                                 </Grid>
@@ -365,12 +386,14 @@ const PremiDetailPage = ({ detail, league }) => {
                                         // height:"30px"
                                         textAlign: 'center',
                                     }}
-                                    style={{ width: '100%', margin: 0 }}>
+                                    style={{ width: '100%', margin: 0 }}
+                                >
                                     <Grid item xs={2}>
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap>
+                                            noWrap
+                                        >
                                             {data.rank}
                                         </Typography>
                                     </Grid>
@@ -401,7 +424,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 fontSize: '15px',
                                                 whiteSpace: 'nowrap',
                                                 textOverflow: 'ellipsis',
-                                            }}>
+                                            }}
+                                        >
                                             {data.team.name}
                                         </Typography>
                                     </Grid>
@@ -413,11 +437,13 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 xs: 'none',
                                                 md: 'block',
                                             },
-                                        }}>
+                                        }}
+                                    >
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap>
+                                            noWrap
+                                        >
                                             {data.all.played}
                                         </Typography>
                                     </Grid>
@@ -429,7 +455,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 xs: 'none',
                                                 md: 'block',
                                             },
-                                        }}>
+                                        }}
+                                    >
                                         <Typography
                                             variant="h6"
                                             component={'div'}
@@ -439,7 +466,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                                     xs: 'none',
                                                     md: 'block',
                                                 },
-                                            }}>
+                                            }}
+                                        >
                                             {data.all.win}
                                         </Typography>
                                     </Grid>
@@ -451,11 +479,13 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 xs: 'none',
                                                 md: 'block',
                                             },
-                                        }}>
+                                        }}
+                                    >
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap>
+                                            noWrap
+                                        >
                                             {data.all.draw}
                                         </Typography>
                                     </Grid>
@@ -467,11 +497,13 @@ const PremiDetailPage = ({ detail, league }) => {
                                                 xs: 'none',
                                                 md: 'block',
                                             },
-                                        }}>
+                                        }}
+                                    >
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap>
+                                            noWrap
+                                        >
                                             {data.all.lose}
                                         </Typography>
                                     </Grid>
@@ -479,7 +511,8 @@ const PremiDetailPage = ({ detail, league }) => {
                                         <Typography
                                             variant="h6"
                                             component={'div'}
-                                            noWrap>
+                                            noWrap
+                                        >
                                             {data.points}
                                         </Typography>
                                     </Grid>
