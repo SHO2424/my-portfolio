@@ -60,12 +60,15 @@ const PremiDetailPage = ({ detail, league }) => {
     const showStatistic = async () => {
         handleOpen();
         const year = new Date().getFullYear();
+        console.log(year);
+        const month = new Date().getMonth() + 1;
+        const season = month >= 8 ? year : year - 1;
         try {
             const apiUrl =
                 'https://api-football-v1.p.rapidapi.com/v3/standings';
             const response = await axios.get(apiUrl, {
                 params: {
-                    season: year - 1,
+                    season: season,
                     league: league,
                 },
                 headers: {
@@ -501,7 +504,7 @@ export async function getServerSideProps(context) {
         const response = await axios.get(apiUrl, {
             params: {
                 league: league,
-                season: '2023',
+                season: '2024',
                 country: country,
             },
             headers: {
