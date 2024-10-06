@@ -16,9 +16,7 @@ const Navigation = ({ user }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav
-            className="border-b border-gray-100"
-            style={{ background: 'rgb(180 180 180)' }}>
+        <nav className="border-b border-gray-100 bg-gray-800">
             {/* Primary Navigation Menu */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
@@ -37,19 +35,6 @@ const Navigation = ({ user }) => {
                                 active={router.pathname === '/home'}>
                                 Home
                             </NavLink>
-                            {/* <nav className="inline-flex items-center  border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out ">
-                            <div className={styles.menuItem}>
-                                league
-                                <div className={styles.subMenu}>
-                                <NavLink href="detail/England/39">Premier</NavLink>
-                                <NavLink href="detail/Spain/140">Laliga</NavLink>
-                                <NavLink href="detail/Italy/135">SerieA</NavLink>
-                                <NavLink href="detail/France/61">Ligue1</NavLink>
-                                <NavLink href="detail/Germany/78">Bundesliga</NavLink>
-                                </div>
-                            </div>
-                
-                        </nav> */}
                         </div>
                     </div>
 
