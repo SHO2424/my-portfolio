@@ -60,7 +60,6 @@ const PremiDetailPage = ({ detail, league }) => {
     const showStatistic = async () => {
         handleOpen();
         const year = new Date().getFullYear();
-        console.log(year);
         const month = new Date().getMonth() + 1;
         const season = month >= 8 ? year : year - 1;
         try {
@@ -88,7 +87,6 @@ const PremiDetailPage = ({ detail, league }) => {
             setLoading(false);
         }
     };
-    // const theme = useTheme();
 
     return (
         <AppLayout>
@@ -499,12 +497,15 @@ const PremiDetailPage = ({ detail, league }) => {
 };
 export async function getServerSideProps(context) {
     const { country, league } = context.params;
+    const year = new Date().getFullYear();
+    const month = new Date().getMonth() + 1;
+    const season = month >= 8 ? year : year - 1;
     try {
         const apiUrl = 'https://api-football-v1.p.rapidapi.com/v3/teams';
         const response = await axios.get(apiUrl, {
             params: {
                 league: league,
-                season: '2024',
+                season: season,
                 country: country,
             },
             headers: {
