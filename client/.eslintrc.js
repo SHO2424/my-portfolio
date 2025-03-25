@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    parser: '@typescript-eslint/parser', 
+    parser: '@typescript-eslint/parser',
     settings: {
         react: {
             version: 'detect',
@@ -19,12 +19,12 @@ module.exports = {
     ],
     overrides: [
         {
-          files: ['*.js', '*.jsx'], // ← JSファイルを対象に
-          parserOptions: {
-            project: null, // ← 型チェックをスキップ！
-          },
+            files: ['*.js', '*.jsx'], // ← JSファイルを対象に
+            parserOptions: {
+                project: null, // ← 型チェックをスキップ！
+            },
         },
-      ],
+    ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -34,7 +34,7 @@ module.exports = {
         babelOptions: {
             presets: ['@babel/preset-react'],
         },
-        project: './tsconfig.json', 
+        project: './tsconfig.json',
     },
     plugins: ['react', '@next/eslint-plugin-next', 'prettier'],
     rules: {

@@ -75,7 +75,9 @@ const search = () => {
                             <Card sx={{ borderRadius: '10%', height: '100%' }}>
                                 <CardActionArea sx={{ flexGrow: 1 }}>
                                     <Link
-                                        href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
+                                        // href={`/detail/${team.team.country}/league/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}
+                                        href={`/detail/${team.team.country}/league/team/${team.team.id}`}
+                                        key={team.id}>
                                         <Box
                                             sx={{
                                                 display: 'flex',
