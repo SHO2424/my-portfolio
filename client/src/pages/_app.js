@@ -1,3 +1,10 @@
+// src/pages/_app.js
+import '../styles/globals.css';
+
+
+const App = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+export default App;
 // import 'tailwindcss/tailwind.css';
 // import React, { useEffect } from 'react';
 // import laravelAxios from '@/lib/laravelAxios';
@@ -19,8 +26,3 @@
 // }
 
 // export default App;
-import 'tailwindcss/tailwind.css';
-
-const App = ({ Component, pageProps }) => <Component {...pageProps} />;
-
-export default App;

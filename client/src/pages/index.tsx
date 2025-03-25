@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 // import { useAuth } from '@/hooks/auth';
 import AppLayout from '@/components/Layouts/AppLayout';
@@ -8,7 +9,6 @@ export default function Home() {
     // const { user } = useAuth({ middleware: 'guest' });
 
     return (
-        <>
             <AppLayout>
                 <Box sx={{ height: '100vh' }}>
                     <Box
@@ -35,6 +35,5 @@ export default function Home() {
                     </Box>
                 </Box>
             </AppLayout>
-        </>
     );
 }

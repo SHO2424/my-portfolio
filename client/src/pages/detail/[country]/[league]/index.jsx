@@ -16,11 +16,9 @@ import Layout from '@/components/Layouts/Card';
 import Button from '@/components/Button';
 import { CircularProgress } from '@mui/material';
 import ImageLoader from '@/components/Layouts/ImageLoader';
-import BackButton from '@/components/Layouts/backButton';
 import ClearIcon from '@mui/icons-material/Clear';
-// import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-
 const PremiDetailPage = ({ detail, league }) => {
+    console.log("detail",detail)
     const router = useRouter();
     const { country } = router.query;
     const countryLogos = {
@@ -87,12 +85,8 @@ const PremiDetailPage = ({ detail, league }) => {
             setLoading(false);
         }
     };
-
     return (
         <AppLayout>
-            <Box sx={{ marginLeft: '20px', marginTop: '20px' }}>
-                <BackButton />
-            </Box>
             <Box
                 sx={{
                     marginTop: '20px',
@@ -151,7 +145,9 @@ const PremiDetailPage = ({ detail, league }) => {
                                     flexGrow: 1,
                                 }}>
                                 <Link
-                                    href={`/detail/${team.team.country}/${league}/team/${team.team.id}?path=${team.team.logo}&name=${team.team.name}&id=${team.team.id}`}>
+                                    href={`/detail/${team.team.country}/${league}/team/${team.team.id}`}
+                                    key={team.id}
+                                    >
                                     <Box
                                         sx={{
                                             display: 'flex',

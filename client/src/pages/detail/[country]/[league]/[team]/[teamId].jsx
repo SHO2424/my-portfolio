@@ -12,7 +12,6 @@ import {
     Modal,
     ButtonGroup,
 } from '@mui/material';
-// import Button from '@mui/material/Button';
 import laravelAxios from '@/lib/laravelAxios';
 import StarIcon from '@mui/icons-material/Star';
 import ImageLoader from '@/components/Layouts/ImageLoader';
@@ -23,6 +22,7 @@ import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useAuth } from '@/hooks/auth';
 import ClearIcon from '@mui/icons-material/Clear';
 const TeamDetailPage = ({ detail }) => {
+    console.log("detailのなかみは",detail[0].team)
     const [activeSquads, setActiveSquads] = useState([]);
     const [reviewOpen, setReviewOpen] = useState(false);
     const [detailOpen, setDetailOpen] = useState(false);
@@ -39,18 +39,11 @@ const TeamDetailPage = ({ detail }) => {
     const [editedContent, setEditedContent] = useState('');
     const [loading, setLoading] = useState(true);
     const [isEmpty, setIsEmpty] = useState(false);
-    const router = useRouter();
     const { user } = useAuth({ middleware: 'auth' });
-    const { path } = router.query; // クエリパラメータからuserIdを取得
-    const { name } = router.query; // クエリパラメータからuserIdを取得
-    const { id } = router.query; // クエリパラメータからuserIdを取得
-    const { country } = router.query;
-    const { league } = router.query;
+    const path = detail[0].team.logo
+    const name = detail[0].team.name
+    const id = detail[0].team.id
     const maxLength = '30';
-    console.log(country);
-    console.log(league);
-    console.log({ id });
-
     console.log(detail);
     useEffect(() => {
         if (
@@ -181,6 +174,7 @@ const TeamDetailPage = ({ detail }) => {
     };
 
     const updateAverageRating = updateReviews => {
+        console.log('updateReviews:', updateReviews);
         if (updateReviews.length > 0) {
             const totalRating = updateReviews.reduce(
                 (acc, review) => acc + review.rating,
@@ -254,9 +248,6 @@ const TeamDetailPage = ({ detail }) => {
     }
     return (
         <AppLayout>
-            <Box sx={{ marginLeft: '20px', marginTop: '20px' }}>
-                <BackButton />
-            </Box>
             <Box
                 // onClick={handleOpen}
                 sx={{ marginTop: '20px' }}>
@@ -429,6 +420,10 @@ const TeamDetailPage = ({ detail }) => {
                                 width: '100%',
                                 marginTop: '10px',
                                 marginBottom: '20px',
+                                padding:'3px 8px',
+                                border:'2px solid gray',
+                                borderRadius:'8px'
+
                             }}
                             placeholder="Maximum 20 characters"
                             onChange={handleReviewChange}
