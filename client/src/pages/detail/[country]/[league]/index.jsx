@@ -18,7 +18,7 @@ import { CircularProgress } from '@mui/material';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import ClearIcon from '@mui/icons-material/Clear';
 const PremiDetailPage = ({ detail, league }) => {
-    console.log("detail",detail)
+    console.log('detail', detail);
     const router = useRouter();
     const { country } = router.query;
     const countryLogos = {
@@ -146,8 +146,7 @@ const PremiDetailPage = ({ detail, league }) => {
                                 }}>
                                 <Link
                                     href={`/detail/${team.team.country}/${league}/team/${team.team.id}`}
-                                    key={team.id}
-                                    >
+                                    key={team.id}>
                                     <Box
                                         sx={{
                                             display: 'flex',

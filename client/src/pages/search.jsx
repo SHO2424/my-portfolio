@@ -18,10 +18,8 @@ import {
 const search = () => {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log(results);
     const router = useRouter();
     const { query: searchQuery } = router.query;
-    console.log(searchQuery);
     useEffect(() => {
         if (!searchQuery) {
             return;

@@ -63,11 +63,11 @@ const SearchBar = () => {
     const [query, setQuery] = useState('');
     const router = useRouter();
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         setQuery(e.target.value);
     };
 
-    const searchQuery = (e) => {
+    const searchQuery = e => {
         e.preventDefault();
         if (!query.trim()) {
             return;
@@ -88,8 +88,7 @@ const SearchBar = () => {
                 flexDirection: { xs: 'column', md: 'row' },
                 border: 'none', // borderを削除
                 outline: 'none',
-            }}
-        >
+            }}>
             <TextField
                 id="filled-basic"
                 label="Let's search in English!"

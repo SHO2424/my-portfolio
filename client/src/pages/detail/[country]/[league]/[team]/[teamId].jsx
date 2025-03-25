@@ -16,13 +16,12 @@ import laravelAxios from '@/lib/laravelAxios';
 import StarIcon from '@mui/icons-material/Star';
 import ImageLoader from '@/components/Layouts/ImageLoader';
 import BackButton from '@/components/Layouts/backButton';
-import { useRouter } from 'next/router';
 import Button from '@/components/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useAuth } from '@/hooks/auth';
 import ClearIcon from '@mui/icons-material/Clear';
 const TeamDetailPage = ({ detail }) => {
-    console.log("detailのなかみは",detail[0].team)
+    console.log('detailのなかみは', detail[0].team);
     const [activeSquads, setActiveSquads] = useState([]);
     const [reviewOpen, setReviewOpen] = useState(false);
     const [detailOpen, setDetailOpen] = useState(false);
@@ -40,9 +39,9 @@ const TeamDetailPage = ({ detail }) => {
     const [loading, setLoading] = useState(true);
     const [isEmpty, setIsEmpty] = useState(false);
     const { user } = useAuth({ middleware: 'auth' });
-    const path = detail[0].team.logo
-    const name = detail[0].team.name
-    const id = detail[0].team.id
+    const path = detail[0].team.logo;
+    const name = detail[0].team.name;
+    const id = detail[0].team.id;
     const maxLength = '30';
     console.log(detail);
     useEffect(() => {
@@ -420,10 +419,9 @@ const TeamDetailPage = ({ detail }) => {
                                 width: '100%',
                                 marginTop: '10px',
                                 marginBottom: '20px',
-                                padding:'3px 8px',
-                                border:'2px solid gray',
-                                borderRadius:'8px'
-
+                                padding: '3px 8px',
+                                border: '2px solid gray',
+                                borderRadius: '8px',
                             }}
                             placeholder="Maximum 20 characters"
                             onChange={handleReviewChange}
